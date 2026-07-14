@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getAllImages, getTagCounts } from '../../lib/patterns';
+
+const images = await getAllImages();
+const tags = getTagCounts(images);
+---
+
+<Base title="Tags">
+  <h1 class="page-title">Tags</h1>
+  <p class="page-subtitle">{tags.length} tags across {images.length} patterns.</p>
+
+  <div class="tag-list">
+    {
+      tags.map((tag) => (
+        <a class="chip" href={`/tags/${tag.name}/`}>
+          {tag.name}
+          <span class="count">{tag.count}</span>
+        </a>
+      ))
+    }
+  </div>
+</Base>

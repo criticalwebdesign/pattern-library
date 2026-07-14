@@ -1,0 +1,70 @@
+<dialog id="lightbox" class="lightbox">
+  <div style="position: relative;">
+    <button type="button" class="lightbox-close" aria-label="Close" data-lightbox-close>×</button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image" data-lightbox-prev>‹</button>
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image" data-lightbox-next>›</button>
+    <div id="lightbox-mount"></div>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const mount = document.getElementById('lightbox-mount');
+  const prevButton = document.querySelector<HTMLButtonElement>('[data-lightbox-prev]');
+  const nextButton = document.querySelector<HTMLButtonElement>('[data-lightbox-next]');
+
+  if (dialog && mount) {
+    const dialogEl = dialog;
+    const mountEl = mount;
+    let currentId: string | null = null;
+
+    function getVisibleTriggers(): HTMLElement[] {
+      return Array.from(document.querySelectorAll<HTMLElement>('[data-lightbox-trigger]')).filter((trigger) => {
+        const wrapper = trigger.closest('.card-wrapper');
+        return !wrapper || !wrapper.classList.contains('is-hidden');
+      });
+    }
+
+    function openById(id: string) {
+      const source = document.querySelector<HTMLElement>(`[data-lightbox-content="${id}"]`);
+      if (!source) return;
+      const clone = source.cloneNode(true) as HTMLElement;
+      clone.hidden = false;
+      mountEl.replaceChildren(clone);
+      currentId = id;
+      dialogEl.showModal();
+    }
+
+    function step(offset: number) {
+      if (!currentId) return;
+      const triggers = getVisibleTriggers();
+      const index = triggers.findIndex((trigger) => trigger.dataset.lightboxTrigger === currentId);
+      if (index === -1 || triggers.length === 0) return;
+      const nextIndex = (index + offset + triggers.length) % triggers.length;
+      const nextId = triggers[nextIndex].dataset.lightboxTrigger;
+      if (nextId) openById(nextId);
+    }
+
+    document.addEventListener('click', (event) => {
+      const trigger = (event.target as HTMLElement).closest<HTMLElement>('[data-lightbox-trigger]');
+      if (!trigger) return;
+      const id = trigger.dataset.lightboxTrigger;
+      if (id) openById(id);
+    });
+
+    prevButton?.addEventListener('click', () => step(-1));
+    nextButton?.addEventListener('click', () => step(1));
+
+    dialogEl.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      if (target.closest('[data-lightbox-close]') || target === dialogEl) {
+        dialogEl.close();
+      }
+    });
+
+    dialogEl.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') step(1);
+      if (event.key === 'ArrowLeft') step(-1);
+    });
+  }
+</script>

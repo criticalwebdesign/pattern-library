@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern Library · Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <h1>Pattern Library <span class="badge-dev">admin</span></h1>
+        <p class="hint">Local-only tool for adding &amp; tagging images. Not part of the deployed site.</p>
+
+        <div id="group-list" class="group-list"></div>
+
+        <button id="new-group-btn" class="btn btn-secondary" type="button">+ New group</button>
+
+        <form id="new-group-form" class="new-group-form" hidden>
+          <input name="title" placeholder="Title (e.g. NYT Games)" required />
+          <select name="category" required>
+            <option value="web">web</option>
+            <option value="app">app</option>
+            <option value="game">game</option>
+          </select>
+          <select name="platform">
+            <option value="">Platform (optional)</option>
+            <option value="mobile">mobile</option>
+            <option value="console">console</option>
+            <option value="desktop">desktop</option>
+            <option value="browser">browser</option>
+          </select>
+          <input name="url" placeholder="URL (optional)" />
+          <input name="trailerUrl" placeholder="Trailer video URL (optional)" />
+          <textarea name="description" placeholder="Description (optional)" rows="2"></textarea>
+          <div class="form-row">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="button" class="btn" id="cancel-new-group">Cancel</button>
+          </div>
+        </form>
+      </aside>
+
+      <main class="main" id="main">
+        <div class="empty-panel">Select a group, or create a new one, to start adding images.</div>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,382 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fafafa;
+  --fg: #16161a;
+  --muted: #6b6b74;
+  --border: #e4e4e8;
+  --accent: #3a5bfd;
+  --card-bg: #ffffff;
+  --chip-bg: #eef0f5;
+  --danger: #d1453b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101014;
+    --fg: #f2f2f5;
+    --muted: #9a9aa5;
+    --border: #2a2a32;
+    --accent: #7d95ff;
+    --card-bg: #18181f;
+    --chip-bg: #22222b;
+    --danger: #ff7a70;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  border-right: 1px solid var(--border);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar h1 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.badge-dev {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  background: var(--chip-bg);
+  color: var(--muted);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  vertical-align: middle;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0 0 0.5rem;
+}
+
+.group-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: none;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+}
+
+.group-item:hover {
+  background: var(--chip-bg);
+}
+
+.group-item.active {
+  border-color: var(--accent);
+  background: var(--chip-bg);
+}
+
+.group-item .name {
+  font-size: 0.9rem;
+}
+
+.group-item .count {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--fg);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-secondary {
+  border-style: dashed;
+}
+
+.btn-danger {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.new-group-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.new-group-form input,
+.new-group-form select,
+.new-group-form textarea {
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.main {
+  padding: 1.5rem 2rem 3rem;
+  overflow-y: auto;
+}
+
+.empty-panel {
+  color: var(--muted);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.group-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  max-width: 640px;
+}
+
+.group-header input,
+.group-header select,
+.group-header textarea {
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--fg);
+  font: inherit;
+}
+
+.group-header input:hover,
+.group-header select:hover,
+.group-header textarea:hover,
+.group-header input:focus,
+.group-header select:focus,
+.group-header textarea:focus {
+  border-color: var(--border);
+  background: var(--card-bg);
+}
+
+.group-header .title-input {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding-left: 0.1rem;
+}
+
+.group-header .meta-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.group-header .delete-group {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.dropzone.drag-over {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--chip-bg);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.image-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-card > a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.image-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background: var(--chip-bg);
+  display: block;
+}
+
+.image-card .card-fields {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.image-card input,
+.image-card textarea {
+  width: 100%;
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.needs-alt {
+  border-color: var(--danger) !important;
+}
+
+.tag-editor {
+  position: relative;
+}
+
+.tag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.35rem;
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--chip-bg);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.78rem;
+}
+
+.tag-chip button {
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.tag-suggestions {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 0.25rem;
+  max-height: 160px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.tag-suggestions button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  background: none;
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.tag-suggestions button:hover,
+.tag-suggestions button.active {
+  background: var(--chip-bg);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-indicator {
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.save-indicator.visible {
+  opacity: 1;
+}
+
+.delete-image {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+
+.delete-image:hover {
+  color: var(--danger);
+}

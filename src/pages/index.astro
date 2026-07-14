@@ -1,0 +1,43 @@
+---
+import Base from "../layouts/Base.astro";
+import ImageCard from "../components/ImageCard.astro";
+import GalleryToolbar from "../components/GalleryToolbar.astro";
+import Lightbox from "../components/Lightbox.astro";
+import { getAllImages, getTagCounts } from "../lib/patterns";
+
+const images = await getAllImages();
+const tags = getTagCounts(images);
+---
+
+<Base title="Browse">
+  <p class="page-subtitle">
+    Browse {images.length} UI patterns from websites, apps, and games. Filter by tag
+    or search by keyword.
+  </p>
+
+  <GalleryToolbar tags={tags} totalCount={images.length} />
+
+  <ul class="gallery" data-gallery>
+    {
+      images.length > 0 ? (
+        images.map((image) => (
+          <ImageCard
+            id={image.id}
+            src={image.src}
+            alt={image.alt}
+            caption={image.caption}
+            tags={image.tags}
+            groupTitle={image.groupTitle}
+            groupSlug={image.groupSlug}
+          />
+        ))
+      ) : (
+        <li class="empty-state is-hidden" data-empty-state>
+          No patterns match your filters.
+        </li>
+      )
+    }
+  </ul>
+
+  <Lightbox />
+</Base>

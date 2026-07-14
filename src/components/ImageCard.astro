@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  id: string;
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  tags: string[];
+  groupTitle: string;
+  groupSlug: string;
+}
+
+const { id, src, alt, caption, tags, groupTitle, groupSlug } = Astro.props;
+
+const search = [groupTitle, caption, alt, ...tags].filter(Boolean).join(' ').toLowerCase();
+---
+
+<li class="card-wrapper" data-tags={tags.join(',')} data-search={search}>
+  <button type="button" class="card" data-lightbox-trigger={id}>
+    <Image src={src} alt={alt} width={520} height={Math.round((520 * src.height) / src.width)} loading="lazy" />
+    <div class="card-body">
+      <p class="card-group">{groupTitle}</p>
+      {caption && <p class="card-caption">{caption}</p>}
+      <div class="card-tags">
+        {tags.map((tag) => <span class="tag">{tag}</span>)}
+      </div>
+    </div>
+  </button>
+
+  <div data-lightbox-content={id} hidden>
+    <Image src={src} alt={alt} width={1000} height={Math.round((1000 * src.height) / src.width)} />
+    <div class="lightbox-body">
+      <p class="card-group">
+        <a href={`/groups/${groupSlug}/`}>{groupTitle}</a>
+      </p>
+      {caption && <p class="card-caption">{caption}</p>}
+      <div class="card-tags">
+        {tags.map((tag) => (
+          <a class="tag" href={`/tags/${tag}/`}>
+            {tag}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</li>

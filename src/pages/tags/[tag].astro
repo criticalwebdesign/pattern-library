@@ -1,0 +1,60 @@
+---
+import Base from "../../layouts/Base.astro";
+import ImageCard from "../../components/ImageCard.astro";
+import GalleryToolbar from "../../components/GalleryToolbar.astro";
+import Lightbox from "../../components/Lightbox.astro";
+import { getAllImages, getTagCounts } from "../../lib/patterns";
+
+export async function getStaticPaths() {
+  const images = await getAllImages();
+  const tags = getTagCounts(images);
+  return tags.map((tag) => ({
+    params: { tag: tag.name },
+    props: { tagName: tag.name },
+  }));
+}
+
+interface Props {
+  tagName: string;
+}
+
+const { tagName } = Astro.props;
+const allImages = await getAllImages();
+const allTags = getTagCounts(allImages);
+const matches = allImages.filter((image) => image.tags.includes(tagName));
+---
+
+<Base title={`#${tagName}`}>
+  <h1 class="page-title">#{tagName}</h1>
+  <p class="page-subtitle">{matches.length} patterns tagged “{tagName}”.</p>
+
+  <GalleryToolbar
+    tags={allTags}
+    activeTags={[tagName]}
+    totalCount={matches.length}
+  />
+
+  <ul class="gallery" data-gallery>
+    {
+      allImages.length > 0 ? (
+        allImages.map((image) => (
+          <ImageCard
+            id={image.id}
+            src={image.src}
+            alt={image.alt}
+            caption={image.caption}
+            tags={image.tags}
+            groupTitle={image.groupTitle}
+            groupSlug={image.groupSlug}
+          />
+        ))
+      ) : (
+        <li class="empty-state is-hidden" data-empty-state>
+          No patterns match your filters.
+        </li>
+      )
+    }
+  </ul>
+
+  <Lightbox />
+</Base>

@@ -1,0 +1,75 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import ImageCard from "../../components/ImageCard.astro";
+import Lightbox from "../../components/Lightbox.astro";
+import { resolveVideoEmbed } from "../../lib/video";
+
+export async function getStaticPaths() {
+  const groups = await getCollection("groups");
+  return groups.map((group) => ({
+    params: { slug: group.id },
+    props: { group },
+  }));
+}
+
+interface Props {
+  group: CollectionEntry<"groups">;
+}
+
+const { group } = Astro.props;
+const { title, category, platform, url, trailerUrl, description, images } =
+  group.data;
+const trailer = trailerUrl ? resolveVideoEmbed(trailerUrl) : null;
+---
+
+<Base title={title} description={description}>
+  <h1 class="page-title">{title} <span class="badge">{category}</span></h1>
+  <p class="group-meta">
+    {platform && <span class="badge">{platform}</span>}
+    {
+      url && (
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          {url}
+        </a>
+      )
+    }
+  </p>
+  {description && <p class="page-subtitle">{description}</p>}
+
+  {
+    trailer && (
+      <div class="trailer">
+        {trailer.kind === "file" ? (
+          <video src={trailer.url} controls preload="metadata" />
+        ) : (
+          <iframe
+            src={trailer.embedUrl}
+            title={`${title} trailer`}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        )}
+      </div>
+    )
+  }
+
+  <ul class="gallery" data-gallery>
+    {
+      images.map((image, index) => (
+        <ImageCard
+          id={`${group.id}-${index}`}
+          src={image.src}
+          alt={image.alt}
+          caption={image.caption}
+          tags={image.tags}
+          groupTitle={title}
+          groupSlug={group.id}
+        />
+      ))
+    }
+  </ul>
+
+  <Lightbox />
+</Base>

@@ -1,0 +1,92 @@
+---
+interface Props {
+  tags: { name: string; count: number }[];
+  activeTags?: string[];
+  totalCount: number;
+}
+
+const { tags, activeTags = [], totalCount } = Astro.props;
+---
+
+<div class="toolbar" data-gallery-toolbar>
+  <input
+    type="search"
+    class="search-input"
+    placeholder="Search by tag, keyword, or app name…"
+    aria-label="Search patterns"
+    data-search-input
+  />
+  <div class="tag-chips" role="group" aria-label="Filter by tag">
+    {
+      tags.map((tag) => (
+        <button
+          type="button"
+          class="chip"
+          data-tag-chip={tag.name}
+          aria-pressed={activeTags.includes(tag.name) ? 'true' : 'false'}
+        >
+          {tag.name}
+          <span class="count">{tag.count}</span>
+        </button>
+      ))
+    }
+  </div>
+  <p class="result-count" data-result-count>{totalCount} patterns</p>
+</div>
+
+<script>
+  const toolbar = document.querySelector<HTMLElement>('[data-gallery-toolbar]');
+  const gallery = document.querySelector<HTMLElement>('[data-gallery]');
+  if (toolbar && gallery) {
+    const searchInput = toolbar.querySelector<HTMLInputElement>('[data-search-input]');
+    const chips = Array.from(toolbar.querySelectorAll<HTMLButtonElement>('[data-tag-chip]'));
+    const resultCount = toolbar.querySelector<HTMLElement>('[data-result-count]');
+    const cards = Array.from(gallery.querySelectorAll<HTMLElement>('.card-wrapper'));
+    const emptyState = gallery.querySelector<HTMLElement>('[data-empty-state]');
+
+    const activeTags = new Set(chips.filter((chip) => chip.getAttribute('aria-pressed') === 'true').map((c) => c.dataset.tagChip!));
+
+    function applyFilters() {
+      const query = (searchInput?.value ?? '').trim().toLowerCase();
+      const tokens = query.split(/\s+/).filter(Boolean);
+      let visible = 0;
+
+      for (const card of cards) {
+        const cardTags = (card.dataset.tags ?? '').split(',').filter(Boolean);
+        const haystack = card.dataset.search ?? '';
+
+        const matchesTags = [...activeTags].every((tag) => cardTags.includes(tag));
+        const matchesQuery = tokens.every((token) => haystack.includes(token));
+        const show = matchesTags && matchesQuery;
+
+        card.classList.toggle('is-hidden', !show);
+        if (show) visible += 1;
+      }
+
+      if (resultCount) {
+        resultCount.textContent = `${visible} pattern${visible === 1 ? '' : 's'}`;
+      }
+      if (emptyState) {
+        emptyState.classList.toggle('is-hidden', visible !== 0);
+      }
+    }
+
+    searchInput?.addEventListener('input', applyFilters);
+
+    for (const chip of chips) {
+      chip.addEventListener('click', () => {
+        const tag = chip.dataset.tagChip!;
+        const isActive = activeTags.has(tag);
+        if (isActive) {
+          activeTags.delete(tag);
+        } else {
+          activeTags.add(tag);
+        }
+        chip.setAttribute('aria-pressed', String(!isActive));
+        applyFilters();
+      });
+    }
+
+    applyFilters();
+  }
+</script>

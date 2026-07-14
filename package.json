@@ -1,0 +1,25 @@
+{
+  "name": "pattern-library",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "admin": "node tools/admin/server.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.9.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.8.3",
+    "express": "^4.21.2",
+    "multer": "^2.2.0",
+    "gray-matter": "^4.0.3",
+    "heic-convert": "^2.1.0"
+  }
+}
