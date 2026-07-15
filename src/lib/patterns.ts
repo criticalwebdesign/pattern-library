@@ -14,7 +14,7 @@ export async function getAllImages(): Promise<PatternImage[]> {
   const groups = await getCollection('groups');
   return groups.flatMap((group) => {
     const groupTags = [group.data.category, group.data.platform].filter(
-      (value): value is string => Boolean(value)
+      (value): value is NonNullable<typeof value> => Boolean(value)
     );
     return group.data.images.map((image, index) => ({
       id: `${group.id}-${index}`,

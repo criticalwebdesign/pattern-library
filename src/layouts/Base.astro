@@ -20,11 +20,11 @@ const { title, description = 'A browsable library of UI design and interface pat
   <body>
     <header class="site-header">
       <div class="container">
-        <a class="site-title" href="/">Pattern Library</a>
+        <a class="site-title" href={import.meta.env.BASE_URL}>Pattern Library</a>
         <nav class="site-nav">
-          <a href="/">Browse</a>
-          <a href="/tags/">Tags</a>
-          <a href="/about/">About</a>
+          <a href={import.meta.env.BASE_URL}>Browse</a>
+          <a href={`${import.meta.env.BASE_URL}tags/`}>Tags</a>
+          <a href={`${import.meta.env.BASE_URL}about/`}>About</a>
         </nav>
       </div>
     </header>

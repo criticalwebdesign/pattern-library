@@ -33,12 +33,12 @@ const search = [groupTitle, caption, alt, ...tags].filter(Boolean).join(' ').toL
     <Image src={src} alt={alt} width={1000} height={Math.round((1000 * src.height) / src.width)} />
     <div class="lightbox-body">
       <p class="card-group">
-        <a href={`/groups/${groupSlug}/`}>{groupTitle}</a>
+        <a href={`${import.meta.env.BASE_URL}groups/${groupSlug}/`}>{groupTitle}</a>
       </p>
       {caption && <p class="card-caption">{caption}</p>}
       <div class="card-tags">
         {tags.map((tag) => (
-          <a class="tag" href={`/tags/${tag}/`}>
+          <a class="tag" href={`${import.meta.env.BASE_URL}tags/${tag}/`}>
             {tag}
           </a>
         ))}
