@@ -12,7 +12,8 @@
           "enum": [
             "web",
             "app",
-            "game"
+            "game",
+            "material"
           ]
         },
         "platform": {
@@ -23,6 +24,9 @@
             "desktop",
             "browser"
           ]
+        },
+        "author": {
+          "type": "string"
         },
         "url": {
           "type": "string",

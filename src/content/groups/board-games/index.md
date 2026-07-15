@@ -1,6 +1,6 @@
 ---
 title: Board Games
-category: web
+category: material
 images:
   - src: ./img-01.jpg
     alt: Candyland
@@ -16,6 +16,10 @@ images:
       - board-game
   - src: ./img-10.png
     alt: Life is good - A day in the life as a graphic designer
+    tags:
+      - board-game
+  - src: ./img-11.jpg
+    alt: The Freelancer's Game of Life
     tags:
       - board-game
 description: Random selection of games

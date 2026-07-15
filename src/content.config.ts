@@ -3,15 +3,16 @@ import { glob } from 'astro/loaders';
 
 const groups = defineCollection({
   loader: glob({
-    pattern: '*/index.md',
-    base: './src/content/groups',
-    generateId: ({ entry }) => entry.split('/')[0],
+    pattern: "*/index.md",
+    base: "./src/content/groups",
+    generateId: ({ entry }) => entry.split("/")[0],
   }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      category: z.enum(['web', 'app', 'game']),
-      platform: z.enum(['mobile', 'console', 'desktop', 'browser']).optional(),
+      category: z.enum(["web", "app", "game", "material"]),
+      platform: z.enum(["mobile", "console", "desktop", "browser"]).optional(),
+      author: z.string().optional(),
       url: z.string().url().optional(),
       trailerUrl: z.string().url().optional(),
       description: z.string().optional(),

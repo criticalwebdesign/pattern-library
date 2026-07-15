@@ -2,14 +2,6 @@
 
 An Astro site for browsing UI/UX design patterns (screenshots) from websites, apps, and games — filterable by tag and keyword-searchable.
 
-## Inspiration
-
-- [patterntap.com](https://patterntap.com) (RIP)
-- [gameuidatabase.com](https://gameuidatabase.com)
-- [interfaceingame.com](https://interfaceingame.com)
-- [ui-patterns.com/patterns](https://ui-patterns.com/patterns)
-
-
 
 ## Adding a new group of images
 

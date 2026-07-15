@@ -71,7 +71,7 @@ function readGroup(slug) {
 
 function writeGroup(slug, data) {
   const file = path.join(GROUPS_DIR, slug, 'index.md');
-  const out = matter.stringify('', data);
+  const out = matter.stringify('', data, { skipInvalid: true });
   fs.writeFileSync(file, out, 'utf-8');
 }
 
@@ -131,6 +131,7 @@ app.get('/api/groups', (_req, res) => {
       title: data.title,
       category: data.category,
       platform: data.platform ?? '',
+      author: data.author ?? '',
       url: data.url ?? '',
       trailerUrl: data.trailerUrl ?? '',
       description: data.description ?? '',
@@ -141,7 +142,7 @@ app.get('/api/groups', (_req, res) => {
 });
 
 app.post('/api/groups', (req, res) => {
-  const { title, category, platform, url, trailerUrl, description } = req.body ?? {};
+  const { title, category, platform, author, url, trailerUrl, description } = req.body ?? {};
   if (!title || !category) {
     return res.status(400).json({ error: 'title and category are required' });
   }
@@ -149,6 +150,7 @@ app.post('/api/groups', (req, res) => {
   fs.mkdirSync(path.join(GROUPS_DIR, slug), { recursive: true });
   const data = { title, category, images: [] };
   if (platform) data.platform = platform;
+  if (author) data.author = author;
   if (url) data.url = url;
   if (trailerUrl) data.trailerUrl = trailerUrl;
   if (description) data.description = description;
@@ -165,10 +167,11 @@ app.get('/api/groups/:slug', (req, res) => {
 app.patch('/api/groups/:slug', (req, res) => {
   const data = readGroup(req.params.slug);
   if (!data) return res.status(404).json({ error: 'not found' });
-  const { title, category, platform, url, trailerUrl, description } = req.body ?? {};
+  const { title, category, platform, author, url, trailerUrl, description } = req.body ?? {};
   if (title) data.title = title;
   if (category) data.category = category;
   if (platform !== undefined) data.platform = platform || undefined;
+  if (author !== undefined) data.author = author || undefined;
   if (url !== undefined) data.url = url || undefined;
   if (trailerUrl !== undefined) data.trailerUrl = trailerUrl || undefined;
   if (description !== undefined) data.description = description || undefined;

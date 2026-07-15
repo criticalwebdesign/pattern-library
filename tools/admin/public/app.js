@@ -114,6 +114,7 @@ function renderMain(group) {
         <option value="web">web</option>
         <option value="app">app</option>
         <option value="game">game</option>
+        <option value="material">material</option>
       </select>
       <select data-field="platform">
         <option value="">Platform (optional)</option>
@@ -123,15 +124,16 @@ function renderMain(group) {
         <option value="browser">browser</option>
       </select>
     </div>
-    <input placeholder="URL" value="${escapeHtml(group.url ?? '')}" data-field="url" />
-    <input placeholder="Trailer video URL (YouTube, Vimeo, or direct link)" value="${escapeHtml(group.trailerUrl ?? '')}" data-field="trailerUrl" />
-    <textarea placeholder="Description" rows="2" data-field="description">${escapeHtml(group.description ?? '')}</textarea>
+    <input placeholder="Author (optional)" value="${escapeHtml(group.author ?? "")}" data-field="author" />
+    <input placeholder="URL" value="${escapeHtml(group.url ?? "")}" data-field="url" />
+    <input placeholder="Trailer video URL (YouTube, Vimeo, or direct link)" value="${escapeHtml(group.trailerUrl ?? "")}" data-field="trailerUrl" />
+    <textarea placeholder="Description" rows="2" data-field="description">${escapeHtml(group.description ?? "")}</textarea>
     <button type="button" class="btn btn-danger delete-group">Delete group</button>
   `;
   header.querySelector('[data-field="category"]').value = group.category;
   header.querySelector('[data-field="platform"]').value = group.platform ?? '';
 
-  for (const field of ['title', 'category', 'platform', 'url', 'trailerUrl', 'description']) {
+  for (const field of ['title', 'category', 'platform', 'author', 'url', 'trailerUrl', 'description']) {
     const el = header.querySelector(`[data-field="${field}"]`);
     el.addEventListener('change', async () => {
       await api(`/api/groups/${group.slug}`, { method: 'PATCH', body: JSON.stringify({ [field]: el.value }) });

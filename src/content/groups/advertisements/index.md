@@ -6,18 +6,20 @@ images:
     alt: Sorting game
     tags:
       - sorting
-      - ad
-      - body
+      - hands
+      - advertisement
   - src: ./img-02.png
     alt: Drag
     tags:
-      - body
-      - drag
+      - drag-and-drop
+      - hands
+      - advertisement
   - src: ./img-03.png
     alt: Time Hero game
     tags:
       - rhythm-game
       - sound
+      - advertisement
 platform: mobile
 ---
 

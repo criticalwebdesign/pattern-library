@@ -18,7 +18,7 @@ interface Props {
 }
 
 const { group } = Astro.props;
-const { title, category, platform, url, trailerUrl, description, images } =
+const { title, category, platform, author, url, trailerUrl, description, images } =
   group.data;
 const trailer = trailerUrl ? resolveVideoEmbed(trailerUrl) : null;
 ---
@@ -27,6 +27,7 @@ const trailer = trailerUrl ? resolveVideoEmbed(trailerUrl) : null;
   <h1 class="page-title">{title} <span class="badge">{category}</span></h1>
   <p class="group-meta">
     {platform && <span class="badge">{platform}</span>}
+    {author && <span>by {author}</span>}
     {
       url && (
         <a href={url} target="_blank" rel="noopener noreferrer">
