@@ -47,7 +47,7 @@ a {
 }
 
 .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -98,6 +98,32 @@ main {
 .page-subtitle {
   color: var(--muted);
   margin: 0 0 1.5rem;
+}
+
+.prose {
+  max-width: 640px;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+}
+
+.prose h2 {
+  font-size: 1.15rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.prose ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin: 0.25rem 0;
+}
+
+.prose a {
+  color: var(--accent);
 }
 
 /* Toolbar: search + tag filter chips */

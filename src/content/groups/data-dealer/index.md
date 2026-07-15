@@ -42,5 +42,6 @@ url: 'https://datadealer.com/'
 description: >-
   Data Dealer is an online game about collecting and selling personal data -
   full of irony and gleeful sarcasm.
+platform: browser
 ---
 

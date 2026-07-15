@@ -37,7 +37,8 @@ body {
 .app {
   display: grid;
   grid-template-columns: 300px 1fr;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .sidebar {
@@ -46,6 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  min-height: 0;
 }
 
 .sidebar h1 {
@@ -74,6 +76,7 @@ body {
   flex-direction: column;
   gap: 0.35rem;
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
 }
 
@@ -167,6 +170,7 @@ body {
 
 .main {
   padding: 1.5rem 2rem 3rem;
+  min-height: 0;
   overflow-y: auto;
 }
 
@@ -253,8 +257,12 @@ body {
   flex-direction: column;
 }
 
-.image-card > a {
+.image-card-thumb {
   display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
   cursor: zoom-in;
 }
 
@@ -379,4 +387,75 @@ body {
 
 .delete-image:hover {
   color: var(--danger);
+}
+
+/* Lightbox */
+dialog.lightbox {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  background: var(--card-bg);
+  color: var(--fg);
+  max-width: min(90vw, 900px);
+  width: 100%;
+}
+
+dialog.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-inner {
+  position: relative;
+}
+
+.lightbox img {
+  display: block;
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  background: var(--chip-bg);
+}
+
+.lightbox-caption {
+  margin: 0;
+  padding: 0.75rem 1.25rem 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  z-index: 1;
+}
+
+.lightbox-prev {
+  left: 0.5rem;
+}
+
+.lightbox-next {
+  right: 0.5rem;
 }

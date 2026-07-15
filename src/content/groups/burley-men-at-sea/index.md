@@ -33,5 +33,6 @@ description: >-
   large, bearded Scandinavian fishermen who leave the ordinary behind. The story
   lets you act as a storyteller and wayfinder, shaping the narrative through
   your interactions with the game's handcrafted, draggable vignette world.
+platform: console
 ---
 

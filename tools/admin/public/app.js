@@ -2,6 +2,7 @@ const state = {
   groups: [],
   selectedSlug: null,
   allTags: [], // [{name, count}]
+  currentImages: [], // [{filename, url, alt, caption}] for the selected group, in grid order
 };
 
 const groupListEl = document.getElementById('group-list');
@@ -9,6 +10,48 @@ const mainEl = document.getElementById('main');
 const newGroupBtn = document.getElementById('new-group-btn');
 const newGroupForm = document.getElementById('new-group-form');
 const cancelNewGroupBtn = document.getElementById('cancel-new-group');
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxPrevBtn = document.querySelector('[data-lightbox-prev]');
+const lightboxNextBtn = document.querySelector('[data-lightbox-next]');
+
+let currentLightboxFilename = null;
+
+function openLightbox(filename) {
+  const index = state.currentImages.findIndex((img) => img.filename === filename);
+  if (index === -1) return;
+  const item = state.currentImages[index];
+  lightboxImg.src = item.url;
+  lightboxImg.alt = item.alt || '';
+  lightboxCaption.textContent = item.caption || '';
+  lightboxCaption.hidden = !item.caption;
+  currentLightboxFilename = filename;
+  lightbox.showModal();
+}
+
+function stepLightbox(offset) {
+  if (!currentLightboxFilename || !state.currentImages.length) return;
+  const index = state.currentImages.findIndex((img) => img.filename === currentLightboxFilename);
+  if (index === -1) return;
+  const nextIndex = (index + offset + state.currentImages.length) % state.currentImages.length;
+  openLightbox(state.currentImages[nextIndex].filename);
+}
+
+lightboxPrevBtn.addEventListener('click', () => stepLightbox(-1));
+lightboxNextBtn.addEventListener('click', () => stepLightbox(1));
+
+lightbox.addEventListener('click', (event) => {
+  if (event.target.closest('[data-lightbox-close]') || event.target === lightbox) {
+    lightbox.close();
+  }
+});
+
+lightbox.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight') stepLightbox(1);
+  if (event.key === 'ArrowLeft') stepLightbox(-1);
+});
 
 async function api(path, options = {}) {
   const res = await fetch(path, {
@@ -130,6 +173,8 @@ function renderMain(group) {
   );
   dropzone.addEventListener('drop', (e) => uploadFiles(group.slug, e.dataTransfer.files));
 
+  state.currentImages = (group.images ?? []).map((image) => toLightboxEntry(group.slug, image));
+
   const grid = document.createElement('div');
   grid.className = 'image-grid';
   for (const image of group.images ?? []) {
@@ -145,6 +190,7 @@ function renderMain(group) {
     for (const file of files) formData.append('images', file);
     const { images } = await api(`/api/groups/${slug}/images`, { method: 'POST', body: formData });
     for (const image of images) {
+      state.currentImages.push(toLightboxEntry(slug, image));
       grid.appendChild(renderImageCard(slug, image));
     }
     const groupItem = state.groups.find((g) => g.slug === slug);
@@ -155,22 +201,32 @@ function renderMain(group) {
   }
 }
 
+function toLightboxEntry(slug, image) {
+  const filename = filenameFromSrc(image.src);
+  return {
+    filename,
+    url: `/content-images/${slug}/${filename}`,
+    alt: image.alt || '',
+    caption: image.caption || '',
+  };
+}
+
 function renderImageCard(slug, image) {
   const filename = filenameFromSrc(image.src);
   const card = document.createElement('div');
   card.className = 'image-card';
 
   const imageUrl = `/content-images/${slug}/${filename}`;
-  const imgLink = document.createElement('a');
-  imgLink.href = imageUrl;
-  imgLink.target = '_blank';
-  imgLink.rel = 'noopener';
-  imgLink.title = 'Open full image in a new tab';
+  const imgButton = document.createElement('button');
+  imgButton.type = 'button';
+  imgButton.className = 'image-card-thumb';
+  imgButton.title = 'View larger';
   const img = document.createElement('img');
   img.src = imageUrl;
   img.alt = image.alt || '';
-  imgLink.appendChild(img);
-  card.appendChild(imgLink);
+  imgButton.appendChild(img);
+  imgButton.addEventListener('click', () => openLightbox(filename));
+  card.appendChild(imgButton);
 
   const fields = document.createElement('div');
   fields.className = 'card-fields';
@@ -199,6 +255,7 @@ function renderImageCard(slug, image) {
     if (!confirm('Delete this image?')) return;
     await api(`/api/groups/${slug}/images/${filename}`, { method: 'DELETE' });
     card.remove();
+    state.currentImages = state.currentImages.filter((img) => img.filename !== filename);
     const groupItem = state.groups.find((g) => g.slug === slug);
     if (groupItem) {
       groupItem.imageCount -= 1;
@@ -229,10 +286,15 @@ function renderImageCard(slug, image) {
 
   altInput.addEventListener('input', () => {
     altInput.classList.toggle('needs-alt', !altInput.value.trim());
+    img.alt = altInput.value;
+    const entry = state.currentImages.find((i) => i.filename === filename);
+    if (entry) entry.alt = altInput.value;
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => saveImage({ alt: altInput.value }), 500);
   });
   captionInput.addEventListener('input', () => {
+    const entry = state.currentImages.find((i) => i.filename === filename);
+    if (entry) entry.caption = captionInput.value;
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => saveImage({ caption: captionInput.value }), 500);
   });

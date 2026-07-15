@@ -9,8 +9,8 @@ images:
   - src: ./img-03.png
     alt: Personalization
     tags:
-      - personalization
-      - character
+      - characters
+      - customization
   - src: ./img-06.png
     alt: Tutorial
     tags:

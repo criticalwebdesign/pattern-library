@@ -241,8 +241,12 @@ app.delete('/api/groups/:slug/images/:filename', (req, res) => {
   data.images = (data.images ?? []).filter((img) => img.src !== `./${filename}`);
   writeGroup(slug, data);
 
-  const filePath = path.join(GROUPS_DIR, slug, filename);
-  if (fs.existsSync(filePath)) fs.rmSync(filePath);
+  // Note: the image file itself is intentionally left on disk. Astro's dev
+  // server caches image imports in .astro/content-assets.mjs for the life of
+  // the process and never prunes entries for deleted files, so removing the
+  // file immediately crashes the next page render that touches the stale
+  // cached import. Run `npm run admin:prune` (with the dev server stopped)
+  // to clean up files that are no longer referenced by any group.
 
   res.json({ ok: true });
 });

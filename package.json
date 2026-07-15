@@ -9,7 +9,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "admin": "node tools/admin/server.mjs"
+    "admin": "node tools/admin/server.mjs",
+    "admin:prune": "node tools/admin/prune.mjs"
   },
   "dependencies": {
     "astro": "^5.9.0"

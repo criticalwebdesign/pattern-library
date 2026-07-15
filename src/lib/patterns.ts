@@ -12,17 +12,20 @@ export type PatternImage = {
 
 export async function getAllImages(): Promise<PatternImage[]> {
   const groups = await getCollection('groups');
-  return groups.flatMap((group) =>
-    group.data.images.map((image, index) => ({
+  return groups.flatMap((group) => {
+    const groupTags = [group.data.category, group.data.platform].filter(
+      (value): value is string => Boolean(value)
+    );
+    return group.data.images.map((image, index) => ({
       id: `${group.id}-${index}`,
       src: image.src,
       alt: image.alt,
       caption: image.caption,
-      tags: image.tags,
+      tags: [...new Set([...image.tags, ...groupTags])],
       groupTitle: group.data.title,
       groupSlug: group.id,
-    }))
-  );
+    }));
+  });
 }
 
 export function getTagCounts(images: PatternImage[]): { name: string; count: number }[] {
