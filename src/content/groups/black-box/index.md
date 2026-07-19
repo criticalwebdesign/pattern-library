@@ -6,21 +6,25 @@ images:
     alt: In-app purchase
     tags:
       - in-app-purchase
+      - hint
   - src: ./img-03.png
     alt: Notification
     tags:
       - notification
       - in-app-purchase
+      - hint
   - src: ./img-06.jpg
     alt: Store
     tags:
       - store
       - in-app-purchase
+      - hint
   - src: ./img-15.jpg
     alt: Store
     tags:
       - store
       - in-app-purchase
+      - hint
 platform: mobile
 url: 'https://www.blackboxpuzzles.com/'
 trailerUrl: 'https://www.youtube.com/watch?v=KZP4ZSsilC8'

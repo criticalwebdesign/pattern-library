@@ -151,10 +151,10 @@ function renderMain(group) {
 
   const dropzone = document.createElement('div');
   dropzone.className = 'dropzone';
-  dropzone.textContent = 'Drag & drop images here, or click to choose files (HEIC/HEIF auto-converted to PNG)';
+  dropzone.textContent = 'Drag & drop images here, or click to choose files (HEIC/HEIF/TIFF auto-converted to PNG)';
   const fileInput = document.createElement('input');
   fileInput.type = 'file';
-  fileInput.accept = 'image/*,.heic,.heif';
+  fileInput.accept = 'image/*,.heic,.heif,.tif,.tiff';
   fileInput.multiple = true;
   fileInput.hidden = true;
 

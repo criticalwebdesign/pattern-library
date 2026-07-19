@@ -2,46 +2,22 @@
 title: Literally
 category: game
 images:
+  - src: ./img-93.png
+    alt: Onboarding tutorial
+    tags:
+      - tutorial
+      - onboarding
+      - words
+  - src: ./img-95.png
+    alt: Onboarding tutorial
+    tags:
+      - tutorial
+      - onboarding
+      - words
   - src: ./img-01.png
     alt: Challenge page
     tags:
       - challenge
-      - words
-  - src: ./img-04.png
-    alt: Onboarding
-    tags:
-      - onboarding
-      - tutorial
-      - words
-  - src: ./img-11.png
-    alt: Onboarding
-    tags:
-      - onboarding
-      - tutorial
-      - words
-  - src: ./img-16.png
-    alt: Onboarding
-    tags:
-      - onboarding
-      - tutorial
-      - words
-  - src: ./img-22.png
-    alt: Onboarding
-    tags:
-      - onboarding
-      - tutorial
-      - words
-  - src: ./img-29.png
-    alt: Onboarding
-    tags:
-      - onboarding
-      - tutorial
-      - words
-  - src: ./img-37.png
-    alt: Onboarding
-    tags:
-      - onboarding
-      - tutorial
       - words
   - src: ./img-46.png
     alt: Instruction

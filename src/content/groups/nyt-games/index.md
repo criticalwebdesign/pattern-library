@@ -4,15 +4,11 @@ category: game
 url: 'https://www.nytimes.com/games'
 description: 'Wordle, Connections, and streak mechanics from the NYT Games app.'
 images:
-  - src: ./img-01.png
-    alt: Soduku
-    tags:
-      - title-screen
-      - dark-mode
-  - src: ./img-03.png
+  - src: ./img-10.png
     alt: Main menu
     tags:
       - menu
+      - words
       - dark-mode
   - src: ./img-06.png
     alt: Main menu
@@ -20,11 +16,15 @@ images:
       - menu
       - words
       - dark-mode
-  - src: ./img-10.png
+  - src: ./img-03.png
     alt: Main menu
     tags:
       - menu
-      - words
+      - dark-mode
+  - src: ./img-01.png
+    alt: Soduku
+    tags:
+      - title-screen
       - dark-mode
   - src: ./img-15.png
     alt: 'Social '
@@ -64,6 +64,11 @@ images:
       - badges
       - challenge
       - dark-mode
+  - src: ./img-44.png
+    alt: Badges awarded
+    tags:
+      - badges
+      - achievements
   - src: ./img-40.png
     alt: Streak
     tags:
@@ -78,6 +83,20 @@ images:
       - streak
       - achievements
       - dark-mode
+  - src: ./img-42.png
+    alt: Advertisement
+    tags:
+      - offer
+      - advertisement
+      - logo
+      - branding
+  - src: ./img-47.jpg
+    alt: Advertisement
+    tags:
+      - offer
+      - advertisement
+      - branding
+      - logo
 platform: mobile
 ---
 

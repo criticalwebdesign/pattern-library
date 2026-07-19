@@ -8,7 +8,7 @@ interface Props {
 const { tags, activeTags = [], totalCount } = Astro.props;
 ---
 
-<div class="toolbar" data-gallery-toolbar>
+<div class="toolbar" data-gallery-toolbar data-base={import.meta.env.BASE_URL}>
   <input
     type="search"
     class="search-input"
@@ -44,6 +44,14 @@ const { tags, activeTags = [], totalCount } = Astro.props;
     const cards = Array.from(gallery.querySelectorAll<HTMLElement>('.card-wrapper'));
     const emptyState = gallery.querySelector<HTMLElement>('[data-empty-state]');
 
+    const base = toolbar.dataset.base || '/';
+    const tagUrl = (tag: string) => `${base}tags/${tag}/`;
+
+    function tagFromPath(pathname: string) {
+      const match = pathname.match(/\/tags\/([^/]+)\/?$/);
+      return match ? match[1] : null;
+    }
+
     const activeTags = new Set(chips.filter((chip) => chip.getAttribute('aria-pressed') === 'true').map((c) => c.dataset.tagChip!));
 
     function applyFilters() {
@@ -73,19 +81,28 @@ const { tags, activeTags = [], totalCount } = Astro.props;
 
     searchInput?.addEventListener('input', applyFilters);
 
+    function setActiveTag(tag: string | null) {
+      activeTags.clear();
+      for (const chip of chips) {
+        const isActive = chip.dataset.tagChip === tag;
+        chip.setAttribute('aria-pressed', String(isActive));
+        if (isActive) activeTags.add(chip.dataset.tagChip!);
+      }
+      applyFilters();
+    }
+
     for (const chip of chips) {
       chip.addEventListener('click', () => {
         const tag = chip.dataset.tagChip!;
-        const isActive = activeTags.has(tag);
-        if (isActive) {
-          activeTags.delete(tag);
-        } else {
-          activeTags.add(tag);
-        }
-        chip.setAttribute('aria-pressed', String(!isActive));
-        applyFilters();
+        const wasActive = activeTags.has(tag);
+        setActiveTag(wasActive ? null : tag);
+        history.pushState({}, '', wasActive ? base : tagUrl(tag));
       });
     }
+
+    window.addEventListener('popstate', () => {
+      setActiveTag(tagFromPath(location.pathname));
+    });
 
     applyFilters();
   }

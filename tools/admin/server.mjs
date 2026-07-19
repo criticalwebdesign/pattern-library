@@ -2,6 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import matter from 'gray-matter';
 import heicConvert from 'heic-convert';
+import sharp from 'sharp';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,8 +23,10 @@ const EXT_BY_MIME = {
   'image/svg+xml': 'svg',
   'image/heic': 'heic',
   'image/heif': 'heif',
+  'image/tiff': 'tif',
 };
 const HEIC_EXTS = new Set(['heic', 'heif']);
+const TIFF_EXTS = new Set(['tif']);
 
 // Browsers (especially Safari/iOS) often send an empty or generic mimetype
 // for HEIC/HEIF files, so fall back to the filename extension.
@@ -32,6 +35,7 @@ function detectExt(file) {
   if (byMime) return byMime;
   const byName = path.extname(file.originalname).slice(1).toLowerCase();
   if (byName === 'jpeg') return 'jpg';
+  if (byName === 'tiff') return 'tif';
   if (Object.values(EXT_BY_MIME).includes(byName)) return byName;
   return null;
 }
@@ -201,6 +205,15 @@ app.post('/api/groups/:slug/images', upload.array('images', 25), async (req, res
     if (HEIC_EXTS.has(ext)) {
       try {
         buffer = Buffer.from(await heicConvert({ buffer, format: 'PNG' }));
+      } catch (err) {
+        return res.status(400).json({ error: `Couldn't convert ${file.originalname}: ${err.message}` });
+      }
+      ext = 'png';
+    }
+
+    if (TIFF_EXTS.has(ext)) {
+      try {
+        buffer = await sharp(buffer).png().toBuffer();
       } catch (err) {
         return res.status(400).json({ error: `Couldn't convert ${file.originalname}: ${err.message}` });
       }
