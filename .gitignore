@@ -1,5 +1,8 @@
 .DS_Store
 
+# Astro build cache / generated types
+.astro
+
 # Logs
 logs
 *.log
