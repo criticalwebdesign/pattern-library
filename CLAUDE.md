@@ -52,4 +52,3 @@ Deleting an image through the admin API removes it from the group's frontmatter 
 ### Gotchas
 
 - **Port conflicts**: `npm run dev` (4321) and `npm run admin` (4877) are often left running across sessions. Check `lsof -i :4321` / `lsof -i :4877` before starting another instance — otherwise you'll hit `EADDRINUSE`.
-- **`.astro/` is tracked in git** (`content-assets.mjs`, `data-store.json`). Running `astro dev`/`check`/`build` regenerates it and shows up as a diff — that's just cache churn, not a real change. Safe to `git checkout -- .astro/` before committing unless you intentionally changed `content.config.ts`.
