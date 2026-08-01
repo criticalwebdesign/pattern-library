@@ -7,11 +7,13 @@ images:
     tags:
       - overworld
       - customization
+      - microgame
   - src: ./img-03.png
     alt: New character
     tags:
       - characters
       - achievements
+      - microgame
   - src: ./img-06.png
     alt: Customization
     tags:
@@ -27,28 +29,35 @@ images:
     alt: Menu
     tags:
       - menu
+      - microgame
   - src: ./img-28.png
-    alt: ''
+    alt: Tutorial
     tags:
       - modal
+      - microgame
+      - tutorial
   - src: ./img-36.png
-    alt: tutorial
+    alt: Tutorial
     tags:
       - tutorial
+      - microgame
   - src: ./img-45.png
     alt: Achievements
     tags:
       - tutorial
       - achievements
+      - microgame
   - src: ./img-55.png
     alt: Effect
     tags:
       - effect
       - intertitle
+      - microgame
   - src: ./img-66.png
     alt: Achievements
     tags:
       - achievements
+      - microgame
 platform: mobile
 url: 'https://www.dumbwaystodie.com/'
 trailerUrl: 'https://www.youtube.com/watch?v=IJNR2EpS0jw'

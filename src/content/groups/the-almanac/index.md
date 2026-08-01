@@ -27,6 +27,25 @@ images:
     tags:
       - title-screen
       - tutorial
+  - src: ./img-16.png
+    alt: Title screen
+    tags:
+      - dark-mode
+  - src: ./img-18.png
+    alt: Daily challenge
+    tags:
+      - dark-mode
+      - challenge
+  - src: ./img-21.png
+    alt: In-game
+    tags:
+      - dark-mode
+      - menu
+  - src: ./img-25.png
+    alt: Avatar
+    tags:
+      - dark-mode
+      - menu
 platform: mobile
 url: 'https://apps.apple.com/us/app/the-almanac/id6742649363'
 description: >-

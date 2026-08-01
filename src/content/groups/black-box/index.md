@@ -7,24 +7,28 @@ images:
     tags:
       - in-app-purchase
       - hint
+      - puzzles
   - src: ./img-03.png
     alt: Notification
     tags:
       - notification
       - in-app-purchase
       - hint
+      - puzzles
   - src: ./img-06.jpg
     alt: Store
     tags:
       - store
       - in-app-purchase
       - hint
+      - puzzles
   - src: ./img-15.jpg
     alt: Store
     tags:
       - store
       - in-app-purchase
       - hint
+      - puzzles
 platform: mobile
 url: 'https://www.blackboxpuzzles.com/'
 trailerUrl: 'https://www.youtube.com/watch?v=KZP4ZSsilC8'
