@@ -7,19 +7,19 @@ images:
     tags:
       - sorting
       - hands
-      - advertisement
+      - ads
   - src: ./img-02.png
     alt: Drag
     tags:
       - drag-and-drop
       - hands
-      - advertisement
+      - ads
   - src: ./img-03.png
     alt: Time Hero game
     tags:
       - rhythm-game
       - sound
-      - advertisement
+      - ads
 platform: mobile
 ---
 

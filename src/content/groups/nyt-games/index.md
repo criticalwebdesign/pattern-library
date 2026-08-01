@@ -87,16 +87,16 @@ images:
     alt: Advertisement
     tags:
       - offer
-      - advertisement
       - logo
       - branding
+      - ads
   - src: ./img-47.jpg
     alt: Advertisement
     tags:
       - offer
-      - advertisement
       - branding
       - logo
+      - ads
 platform: mobile
 ---
 

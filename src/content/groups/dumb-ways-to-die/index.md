@@ -25,6 +25,7 @@ images:
       - modal
       - menu
       - in-app-purchase
+      - ads
   - src: ./img-21.png
     alt: Menu
     tags:
