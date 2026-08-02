@@ -8,17 +8,24 @@ images:
       - overworld
       - customization
       - microgame
+      - locked
+      - timer
+      - currency
   - src: ./img-03.png
     alt: New character
     tags:
       - characters
       - achievements
       - microgame
+      - timer
+      - currency
   - src: ./img-06.png
     alt: Customization
     tags:
       - customization
       - progress
+      - locked
+      - currency
   - src: ./img-15.png
     alt: Popup
     tags:
@@ -26,6 +33,8 @@ images:
       - menu
       - in-app-purchase
       - ads
+      - currency
+      - store
   - src: ./img-21.png
     alt: Menu
     tags:

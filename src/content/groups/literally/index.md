@@ -20,9 +20,9 @@ images:
       - challenge
       - words
   - src: ./img-46.png
-    alt: Instruction
+    alt: Instructions
     tags:
-      - instruction
+      - instructions
       - words
   - src: ./img-56.png
     alt: Modal

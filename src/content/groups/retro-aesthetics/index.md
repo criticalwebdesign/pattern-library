@@ -45,11 +45,13 @@ images:
     tags:
       - rpg
       - turn-based
+      - monsters
   - src: ./img-08.png
     alt: 'Dragon Sinker: Descendants of Legendr'
     tags:
       - rpg
       - turn-based
+      - monsters
   - src: ./img-09.png
     alt: Chaos World
     tags:
@@ -66,18 +68,21 @@ images:
       - rpg
       - pixel-art
       - turn-based
+      - monsters
   - src: ./img-12.png
     alt: 'Dragon Sinker: Descendants of Legend'
     tags:
       - rpg
       - pixel-art
       - turn-based
+      - monsters
   - src: ./img-13.png
     alt: 'Dragon Sinker: Descendants of Legend'
     tags:
       - rpg
       - pixel-art
       - turn-based
+      - monsters
   - src: ./img-14.png
     alt: 'Dragon Sinker: Descendants of Legend'
     tags:
@@ -89,18 +94,21 @@ images:
     tags:
       - rpg
       - turn-based
+      - monsters
   - src: ./img-16.png
     alt: Final Fantasy for the NES
     tags:
       - rpg
       - pixel-art
       - turn-based
+      - monsters
   - src: ./img-17.png
     alt: Final Fantasy for the NES
     tags:
       - rpg
       - pixel-art
       - turn-based
+      - monsters
 platform: desktop
 ---
 

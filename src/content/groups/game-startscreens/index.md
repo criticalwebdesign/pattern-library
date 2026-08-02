@@ -58,6 +58,10 @@ images:
     tags:
       - product-placement
       - cover
+  - src: ./img-16.jpg
+    alt: Castlevania
+    tags:
+      - nintendo
 description: Inspiration for Tally Saves the Internet
 ---
 

@@ -22,6 +22,7 @@ images:
     alt: Title screen
     tags:
       - title-screen
+      - language
   - src: ./img-21.png
     alt: Language menu
     tags:

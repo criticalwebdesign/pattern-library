@@ -10,16 +10,19 @@ images:
       - words
       - main-menu
       - daily-challenge
+      - locked
   - src: ./img-03.png
     alt: Onboarding
     tags:
       - onboarding
       - words
+      - map
   - src: ./img-06.png
     alt: Tutorial
     tags:
       - tutorial
       - words
+      - map
   - src: ./img-07.png
     alt: Continue a previous path
     tags:

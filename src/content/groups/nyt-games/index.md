@@ -10,33 +10,43 @@ images:
       - menu
       - words
       - dark-mode
+      - locked
   - src: ./img-06.png
     alt: Main menu
     tags:
       - menu
       - words
       - dark-mode
+      - locked
+      - daily-challenge
   - src: ./img-03.png
     alt: Main menu
     tags:
       - menu
       - dark-mode
+      - locked
+      - daily-challenge
   - src: ./img-01.png
     alt: Soduku
     tags:
       - title-screen
       - dark-mode
+      - difficulty
+      - daily-challenge
   - src: ./img-15.png
     alt: 'Social '
     tags:
       - users
       - dark-mode
+      - friends
+      - social
   - src: ./img-21.png
     alt: Achievements
     tags:
       - achievements
       - words
       - dark-mode
+      - daily-challenge
   - src: ./img-28.png
     alt: Badges
     tags:
@@ -51,12 +61,16 @@ images:
       - achievements
       - words
       - dark-mode
+      - daily-challenge
+      - streak
   - src: ./img-37.png
     alt: Achievements
     tags:
       - badges
       - challenge
       - dark-mode
+      - streak
+      - daily-challenge
   - src: ./img-39.png
     alt: Challenge
     tags:
@@ -76,6 +90,7 @@ images:
       - achievements
       - goal-setting
       - dark-mode
+    caption: s
   - src: ./img-41.png
     alt: Streak
     tags:
@@ -97,6 +112,31 @@ images:
       - branding
       - logo
       - ads
+  - src: ./img-48.png
+    alt: Strands
+    tags:
+      - hint
+      - words
+      - instructions
+      - pop-up
+  - src: ./img-50.png
+    alt: Strands
+    tags:
+      - hint
+      - words
+  - src: ./img-53.png
+    alt: Strands
+    tags:
+      - words
+      - timer
+      - award
+      - share
+      - ads
+  - src: ./img-57.png
+    alt: Strands
+    tags:
+      - completion
+      - words
 platform: mobile
 ---
 

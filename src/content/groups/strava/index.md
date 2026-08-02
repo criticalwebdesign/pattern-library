@@ -6,6 +6,7 @@ images:
     alt: Strava Privacy Zones
     tags:
       - map
+      - location
 platform: mobile
 ---
 

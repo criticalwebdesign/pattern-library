@@ -36,6 +36,8 @@ images:
     tags:
       - dark-mode
       - challenge
+      - daily-challenge
+      - locked
   - src: ./img-21.png
     alt: In-game
     tags:

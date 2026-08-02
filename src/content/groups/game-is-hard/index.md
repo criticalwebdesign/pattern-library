@@ -13,6 +13,7 @@ images:
       - puzzles
       - challenge
       - daily-challenge
+      - currency
   - src: ./img-47.png
     alt: Tutorial
     tags:

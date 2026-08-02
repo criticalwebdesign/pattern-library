@@ -10,6 +10,7 @@ images:
       - menu
       - daily-challenge
       - ads
+      - banner-ads
 platform: mobile
 author: Fanatee Games
 url: 'https://www.instagram.com/everydaygrids/?hl=en'

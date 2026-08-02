@@ -6,7 +6,7 @@ images:
     alt: Wordiply
     tags:
       - tutorial
-      - instruction
+      - instructions
       - onboarding
       - words
 platform: mobile

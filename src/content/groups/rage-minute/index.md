@@ -10,6 +10,7 @@ images:
     alt: ' Leaderboard'
     tags:
       - leaderboard
+      - location
   - src: ./img-03.png
     alt: Share
     tags:
