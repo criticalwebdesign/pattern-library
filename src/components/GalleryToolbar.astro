@@ -77,6 +77,12 @@ const { tags, activeTags = [], totalCount } = Astro.props;
       if (emptyState) {
         emptyState.classList.toggle('is-hidden', visible !== 0);
       }
+
+      for (const chip of chips) {
+        const tagName = (chip.dataset.tagChip ?? '').toLowerCase();
+        const isMatch = tokens.length > 0 && tokens.some((token) => tagName.includes(token));
+        chip.classList.toggle('is-match', isMatch);
+      }
     }
 
     searchInput?.addEventListener('input', applyFilters);
