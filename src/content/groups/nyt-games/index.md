@@ -139,6 +139,13 @@ images:
     tags:
       - completion
       - words
+  - src: ./img-58.png
+    alt: NYT Crossplay
+    tags:
+      - social
+      - end-screen
+      - turn-based
+      - words
 platform: mobile
 ---
 
