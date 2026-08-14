@@ -51,5 +51,6 @@ images:
       - tutorial
       - timer
       - gyroscope
+description: A random collection of patterns
 ---
 

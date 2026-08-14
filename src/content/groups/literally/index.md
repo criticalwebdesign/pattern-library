@@ -52,7 +52,7 @@ images:
 platform: mobile
 url: 'https://apps.apple.com/us/app/literally-word-game/id6448051011'
 description: >-
-  literally is a word game in which your main opponent is time. This is a race
-  in which you have to collect words from letters so that the game does not end.
+  A word game in which your main opponent is time. This is a race in which you
+  have to collect words from letters so that the game does not end.
 ---
 

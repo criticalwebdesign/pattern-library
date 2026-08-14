@@ -72,6 +72,26 @@ images:
       - cats
       - animals
       - meditation
+  - src: ./img-11.png
+    alt: Paper.io ad
+    tags:
+      - ads
+  - src: ./img-13.png
+    alt: Ad for language game
+    tags:
+      - ads
+      - language
+  - src: ./img-16.png
+    alt: Ad for language game
+    tags:
+      - ads
+      - language
+  - src: ./img-20.png
+    alt: Ad for language game
+    tags:
+      - ads
+      - language
 platform: mobile
+description: 'Advertisements and marketing materials '
 ---
 

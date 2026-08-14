@@ -7,6 +7,7 @@ images:
     tags:
       - material
       - game
+      - device
   - src: ./img-03.jpg
     alt: Dungeons & Dragons flowchart
     tags:
@@ -34,6 +35,9 @@ images:
     tags:
       - infographic
       - flowchart
+      - monsters
+      - cinema
+      - characters
   - src: ./img-16.jpg
     alt: Super Mario Brothers
     tags:
@@ -42,16 +46,28 @@ images:
       - game
       - 8-bit
       - flowchart
+      - characters
   - src: ./img-21.jpg
     alt: What puzzle game am I?
     tags:
       - flowchart
       - 8-bit
       - puzzles
+      - characters
   - src: ./img-27.jpg
     alt: Strong female character flowchart
     tags:
       - flowchart
+      - characters
+  - src: ./img-28.gif
+    alt: Wiimote
+    tags:
+      - physics
+      - material
+      - diagram
+      - motion
+      - game
+      - device
 description: Random selection of diagrams and flowcharts
 ---
 

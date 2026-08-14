@@ -51,6 +51,6 @@ images:
 platform: mobile
 url: 'https://birdigogame.com/'
 trailerUrl: 'https://www.youtube.com/watch?v=-j-Gh1scTRs'
-description: Birdigo is a word puzzle game that mixes deckbuilding ideas with wordplay.
+description: A word puzzle game that mixes deck building ideas with wordplay.
 ---
 

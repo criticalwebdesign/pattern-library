@@ -30,10 +30,10 @@ images:
       - menu
 url: 'https://burlymenatsea.com/'
 description: >-
-  Burly Men at Sea is a charming, branching folktale adventure about a trio of
-  large, bearded Scandinavian fishermen who leave the ordinary behind. The story
-  lets you act as a storyteller and wayfinder, shaping the narrative through
-  your interactions with the game's handcrafted, draggable vignette world.
+  A charming, branching folktale adventure about a trio of large, bearded
+  Scandinavian fishermen who leave the ordinary behind. The story lets you act
+  as a storyteller and wayfinder, shaping the narrative through your
+  interactions with the game's handcrafted, draggable vignette world.
 platform: console
 ---
 

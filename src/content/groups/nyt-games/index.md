@@ -2,7 +2,7 @@
 title: NYT Games
 category: game
 url: 'https://www.nytimes.com/games'
-description: 'Wordle, Connections, and streak mechanics from the NYT Games app.'
+description: 'Wordle, Connections, and others from the NYT Games app.'
 images:
   - src: ./img-10.png
     alt: Main menu
@@ -83,6 +83,7 @@ images:
     tags:
       - badges
       - achievements
+      - end-screen
   - src: ./img-40.png
     alt: Streak
     tags:
@@ -132,6 +133,7 @@ images:
       - award
       - share
       - ads
+      - end-screen
   - src: ./img-57.png
     alt: Strands
     tags:

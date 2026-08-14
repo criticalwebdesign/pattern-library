@@ -57,6 +57,7 @@ images:
       - tutorial
       - achievements
       - microgame
+      - end-screen
   - src: ./img-55.png
     alt: Effect
     tags:
@@ -68,6 +69,7 @@ images:
     tags:
       - achievements
       - microgame
+      - end-screen
 platform: mobile
 url: 'https://www.dumbwaystodie.com/'
 trailerUrl: 'https://www.youtube.com/watch?v=IJNR2EpS0jw'

@@ -24,5 +24,6 @@ platform: mobile
 author: David O'Reilly
 url: 'https://en.wikipedia.org/wiki/Mountain_(video_game)'
 trailerUrl: 'https://www.youtube.com/watch?v=N6dxrPLl9dQ'
+description: A 2014 simulation video game developed by David OReilly
 ---
 

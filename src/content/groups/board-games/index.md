@@ -22,6 +22,6 @@ images:
     alt: The Freelancer's Game of Life
     tags:
       - board-game
-description: Random selection of games
+description: A random selection of board games
 ---
 
