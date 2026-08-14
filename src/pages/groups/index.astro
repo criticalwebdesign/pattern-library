@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import { getGroupSummaries } from '../../lib/patterns';
+
+const groups = await getGroupSummaries();
+---
+
+<Base title="Groups">
+  <h1 class="page-title">Groups</h1>
+  <p class="page-subtitle">{groups.length} groups.</p>
+
+  <ul class="gallery">
+    {
+      groups.map((group) => (
+        <li class="card-wrapper">
+          <a class="card" href={`${import.meta.env.BASE_URL}groups/${group.slug}/`}>
+            <Image
+              src={group.coverImage}
+              alt={group.coverAlt}
+              width={520}
+              height={Math.round((520 * group.coverImage.height) / group.coverImage.width)}
+              loading="lazy"
+            />
+            <div class="card-body">
+              <p class="card-caption">{group.title}</p>
+              <div class="card-tags">
+                {group.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

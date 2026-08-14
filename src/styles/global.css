@@ -204,6 +204,10 @@ main {
   padding: 0;
 }
 
+a.card {
+  cursor: pointer;
+}
+
 .card img {
   display: block;
   width: 100%;

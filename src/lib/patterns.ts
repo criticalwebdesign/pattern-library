@@ -28,6 +28,35 @@ export async function getAllImages(): Promise<PatternImage[]> {
   });
 }
 
+export type GroupSummary = {
+  slug: string;
+  title: string;
+  coverImage: PatternImage['src'];
+  coverAlt: string;
+  tags: string[];
+};
+
+export async function getGroupSummaries(): Promise<GroupSummary[]> {
+  const groups = await getCollection('groups');
+  return groups
+    .filter((group) => group.data.images.length > 0)
+    .map((group) => {
+      const groupTags = [group.data.category, group.data.platform].filter(
+        (value): value is NonNullable<typeof value> => Boolean(value)
+      );
+      const imageTags = group.data.images.flatMap((image) => image.tags);
+      const [cover] = group.data.images;
+      return {
+        slug: group.id,
+        title: group.data.title,
+        coverImage: cover.src,
+        coverAlt: cover.alt,
+        tags: [...new Set([...imageTags, ...groupTags])],
+      };
+    })
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
 export function getTagCounts(images: PatternImage[]): { name: string; count: number }[] {
   const counts = new Map<string, number>();
   for (const image of images) {
