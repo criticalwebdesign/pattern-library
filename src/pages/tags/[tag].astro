@@ -41,8 +41,9 @@ const matches = allImages.filter((image) => image.tags.includes(tagName));
           <ImageCard
             id={image.id}
             src={image.src}
-            alt={image.alt}
+            title={image.title}
             caption={image.caption}
+            link={image.link}
             tags={image.tags}
             groupTitle={image.groupTitle}
             groupSlug={image.groupSlug}

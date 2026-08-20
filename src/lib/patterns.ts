@@ -3,8 +3,9 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 export type PatternImage = {
   id: string;
   src: CollectionEntry<'groups'>['data']['images'][number]['src'];
-  alt: string;
+  title: string;
   caption?: string;
+  link?: string;
   tags: string[];
   groupTitle: string;
   groupSlug: string;
@@ -19,8 +20,9 @@ export async function getAllImages(): Promise<PatternImage[]> {
     return group.data.images.map((image, index) => ({
       id: `${group.id}-${index}`,
       src: image.src,
-      alt: image.alt,
+      title: image.title,
       caption: image.caption,
+      link: image.link,
       tags: [...new Set([...image.tags, ...groupTags])],
       groupTitle: group.data.title,
       groupSlug: group.id,
@@ -32,7 +34,7 @@ export type GroupSummary = {
   slug: string;
   title: string;
   coverImage: PatternImage['src'];
-  coverAlt: string;
+  coverTitle: string;
   tags: string[];
 };
 
@@ -50,7 +52,7 @@ export async function getGroupSummaries(): Promise<GroupSummary[]> {
         slug: group.id,
         title: group.data.title,
         coverImage: cover.src,
-        coverAlt: cover.alt,
+        coverTitle: cover.title,
         tags: [...new Set([...imageTags, ...groupTags])],
       };
     })

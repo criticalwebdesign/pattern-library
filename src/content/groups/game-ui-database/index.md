@@ -3,7 +3,7 @@ title: Game UI Database
 category: web
 images:
   - src: ./img-01.png
-    alt: Pattern website
+    title: Pattern website
     tags:
       - design-patterns
       - design

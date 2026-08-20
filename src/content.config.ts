@@ -19,9 +19,10 @@ const groups = defineCollection({
       images: z
         .object({
           src: image(),
-          alt: z.string(),
+          title: z.string(),
           tags: z.array(z.string()).default([]),
           caption: z.string().optional(),
+          link: z.string().url().optional(),
         })
         .array()
         .default([]),

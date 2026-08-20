@@ -3,48 +3,48 @@ title: The Almanac
 category: game
 images:
   - src: ./img-01.png
-    alt: Title screen
+    title: Title screen
     tags:
       - menu
       - title-screen
   - src: ./img-03.png
-    alt: Main menu
+    title: Main menu
     tags:
       - menu
   - src: ./img-06.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
       - tutorial
       - words
   - src: ./img-10.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
       - tutorial
   - src: ./img-15.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
       - tutorial
   - src: ./img-16.png
-    alt: Title screen
+    title: Title screen
     tags:
       - dark-mode
   - src: ./img-18.png
-    alt: Daily challenge
+    title: Daily challenge
     tags:
       - dark-mode
       - challenge
       - daily-challenge
       - locked
   - src: ./img-21.png
-    alt: In-game
+    title: In-game
     tags:
       - dark-mode
       - menu
   - src: ./img-25.png
-    alt: Avatar
+    title: Avatar
     tags:
       - dark-mode
       - menu

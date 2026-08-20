@@ -3,42 +3,42 @@ title: Queenzle
 category: game
 images:
   - src: ./img-01.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - menu
       - grid
   - src: ./img-03.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - menu
       - grid
   - src: ./img-06.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - menu
       - grid
   - src: ./img-10.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - menu
       - grid
       - end-screen
   - src: ./img-11.png
-    alt: Hint Tutorial
+    title: Hint Tutorial
     tags:
       - tutorial
   - src: ./img-13.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - menu
       - grid
   - src: ./img-16.png
-    alt: Death
+    title: Death
     tags:
       - death
       - ads
@@ -46,7 +46,7 @@ images:
       - heart
       - try-again
   - src: ./img-20.png
-    alt: Shop
+    title: Shop
     tags:
       - shop
       - store
@@ -55,12 +55,12 @@ images:
       - in-app-purchase
       - menu
   - src: ./img-25.png
-    alt: Stats
+    title: Stats
     tags:
       - stats
       - streak
   - src: ./img-31.png
-    alt: Customize avatar store
+    title: Customize avatar store
     tags:
       - store
       - customization

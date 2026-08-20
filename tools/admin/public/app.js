@@ -2,7 +2,7 @@ const state = {
   groups: [],
   selectedSlug: null,
   allTags: [], // [{name, count}]
-  currentImages: [], // [{filename, url, alt, caption}] for the selected group, in grid order
+  currentImages: [], // [{filename, url, title, caption}] for the selected group, in grid order
 };
 
 const groupListEl = document.getElementById('group-list');
@@ -24,7 +24,7 @@ function openLightbox(filename) {
   if (index === -1) return;
   const item = state.currentImages[index];
   lightboxImg.src = item.url;
-  lightboxImg.alt = item.alt || '';
+  lightboxImg.alt = item.title || '';
   lightboxCaption.textContent = item.caption || '';
   lightboxCaption.hidden = !item.caption;
   currentLightboxFilename = filename;
@@ -208,7 +208,7 @@ function toLightboxEntry(slug, image) {
   return {
     filename,
     url: `/content-images/${slug}/${filename}`,
-    alt: image.alt || '',
+    title: image.title || '',
     caption: image.caption || '',
   };
 }
@@ -225,7 +225,7 @@ function renderImageCard(slug, image) {
   imgButton.title = 'View larger';
   const img = document.createElement('img');
   img.src = imageUrl;
-  img.alt = image.alt || '';
+  img.alt = image.title || '';
   imgButton.appendChild(img);
   imgButton.addEventListener('click', () => openLightbox(filename));
   card.appendChild(imgButton);
@@ -233,14 +233,18 @@ function renderImageCard(slug, image) {
   const fields = document.createElement('div');
   fields.className = 'card-fields';
 
-  const altInput = document.createElement('input');
-  altInput.placeholder = 'Describe what this image shows…';
-  altInput.value = image.alt || '';
-  if (!image.alt) altInput.classList.add('needs-alt');
+  const titleInput = document.createElement('input');
+  titleInput.placeholder = 'Describe what this image shows…';
+  titleInput.value = image.title || '';
+  if (!image.title) titleInput.classList.add('needs-title');
 
   const captionInput = document.createElement('input');
   captionInput.placeholder = 'Caption (optional)';
   captionInput.value = image.caption || '';
+
+  const linkInput = document.createElement('input');
+  linkInput.placeholder = 'Source link (optional)';
+  linkInput.value = image.link || '';
 
   const tagEditor = buildTagEditor(image.tags || [], (tags) => saveImage({ tags }));
 
@@ -266,7 +270,7 @@ function renderImageCard(slug, image) {
   });
   footer.append(saveIndicator, deleteBtn);
 
-  fields.append(altInput, captionInput, tagEditor.el, footer);
+  fields.append(titleInput, captionInput, linkInput, tagEditor.el, footer);
   card.appendChild(fields);
 
   let debounceTimer;
@@ -286,19 +290,23 @@ function renderImageCard(slug, image) {
     return entry;
   }
 
-  altInput.addEventListener('input', () => {
-    altInput.classList.toggle('needs-alt', !altInput.value.trim());
-    img.alt = altInput.value;
+  titleInput.addEventListener('input', () => {
+    titleInput.classList.toggle('needs-title', !titleInput.value.trim());
+    img.alt = titleInput.value;
     const entry = state.currentImages.find((i) => i.filename === filename);
-    if (entry) entry.alt = altInput.value;
+    if (entry) entry.title = titleInput.value;
     clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => saveImage({ alt: altInput.value }), 500);
+    debounceTimer = setTimeout(() => saveImage({ title: titleInput.value }), 500);
   });
   captionInput.addEventListener('input', () => {
     const entry = state.currentImages.find((i) => i.filename === filename);
     if (entry) entry.caption = captionInput.value;
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => saveImage({ caption: captionInput.value }), 500);
+  });
+  linkInput.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => saveImage({ link: linkInput.value }), 500);
   });
 
   return card;

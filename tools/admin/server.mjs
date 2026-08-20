@@ -222,7 +222,7 @@ app.post('/api/groups/:slug/images', upload.array('images', 25), async (req, res
 
     const filename = nextImageFilename(slug, ext, added.length);
     fs.writeFileSync(path.join(GROUPS_DIR, slug, filename), buffer);
-    const entry = { src: `./${filename}`, alt: '', tags: [] };
+    const entry = { src: `./${filename}`, title: '', tags: [] };
     data.images = data.images ?? [];
     data.images.push(entry);
     added.push(entry);
@@ -240,9 +240,10 @@ app.patch('/api/groups/:slug/images/:filename', (req, res) => {
   const entry = (data.images ?? []).find((img) => img.src === `./${filename}`);
   if (!entry) return res.status(404).json({ error: 'image not found in group' });
 
-  const { alt, caption, tags } = req.body ?? {};
-  if (alt !== undefined) entry.alt = alt;
+  const { title, caption, link, tags } = req.body ?? {};
+  if (title !== undefined) entry.title = title;
   if (caption !== undefined) entry.caption = caption || undefined;
+  if (link !== undefined) entry.link = link || undefined;
   if (tags !== undefined) entry.tags = tags;
 
   writeGroup(slug, data);

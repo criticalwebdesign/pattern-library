@@ -3,14 +3,14 @@ title: Jeopardy! World Tour
 category: game
 images:
   - src: ./img-01.png
-    alt: Daily calendar
+    title: Daily calendar
     tags:
       - streak
       - xp
       - currency
       - dates
   - src: ./img-03.png
-    alt: Level up
+    title: Level up
     tags:
       - achievements
       - level-up
@@ -18,7 +18,7 @@ images:
       - currency
       - award
   - src: ./img-06.png
-    alt: Jeopardy! World TourNotification
+    title: Jeopardy! World TourNotification
     tags:
       - notification
       - currency

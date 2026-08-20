@@ -62,8 +62,9 @@ const trailer = trailerUrl ? resolveVideoEmbed(trailerUrl) : null;
         <ImageCard
           id={`${group.id}-${index}`}
           src={image.src}
-          alt={image.alt}
+          title={image.title}
           caption={image.caption}
+          link={image.link}
           tags={image.tags}
           groupTitle={title}
           groupSlug={group.id}

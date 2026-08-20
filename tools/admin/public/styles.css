@@ -293,7 +293,7 @@ body {
   font-size: 0.85rem;
 }
 
-.needs-alt {
+.needs-title {
   border-color: var(--danger) !important;
 }
 

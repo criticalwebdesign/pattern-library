@@ -3,7 +3,7 @@ title: Tiles and patterns
 category: web
 images:
   - src: ./img-01.png
-    alt: Dither pattern
+    title: Dither pattern
     tags:
       - dither
       - pattern

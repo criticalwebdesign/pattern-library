@@ -3,7 +3,7 @@ title: In the Weights
 category: web
 images:
   - src: ./img-01.png
-    alt: Statistics
+    title: Statistics
     tags:
       - leaderboard
       - stats

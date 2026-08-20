@@ -3,27 +3,27 @@ title: Black Box
 category: game
 images:
   - src: ./img-01.png
-    alt: In-app purchase
+    title: In-app purchase
     tags:
       - in-app-purchase
       - hint
       - puzzles
   - src: ./img-03.png
-    alt: Notification
+    title: Notification
     tags:
       - notification
       - in-app-purchase
       - hint
       - puzzles
   - src: ./img-06.jpg
-    alt: Store
+    title: Store
     tags:
       - store
       - in-app-purchase
       - hint
       - puzzles
   - src: ./img-15.jpg
-    alt: Store
+    title: Store
     tags:
       - store
       - in-app-purchase

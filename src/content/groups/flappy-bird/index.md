@@ -3,12 +3,12 @@ title: Flappy Bird
 category: web
 images:
   - src: ./img-01.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
       - 8-bit
   - src: ./img-02.png
-    alt: Game over screen
+    title: Game over screen
     tags:
       - stats
       - 8-bit

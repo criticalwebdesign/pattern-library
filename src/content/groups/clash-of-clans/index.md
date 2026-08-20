@@ -3,7 +3,7 @@ title: Clash of Clans
 category: game
 images:
   - src: ./img-03.png
-    alt: Store
+    title: Store
     tags:
       - store
       - in-app-purchase

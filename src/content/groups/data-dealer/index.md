@@ -3,38 +3,38 @@ title: Data Dealer
 category: game
 images:
   - src: ./img-01.png
-    alt: My Empire
+    title: My Empire
     tags:
       - overworld
       - progress
       - stats
       - labor
   - src: ./img-03.png
-    alt: Central Security Agency
+    title: Central Security Agency
     tags:
       - progress
       - stats
       - labor
   - src: ./img-06.png
-    alt: Star Mart
+    title: Star Mart
     tags:
       - progress
       - stats
       - labor
   - src: ./img-10.png
-    alt: Database
+    title: Database
     tags:
       - progress
       - stats
       - collection
       - labor
   - src: ./img-15.png
-    alt: Address
+    title: Address
     tags:
       - progress
       - stats
   - src: ./img-21.png
-    alt: IP Address
+    title: IP Address
     tags:
       - progress
       - stats

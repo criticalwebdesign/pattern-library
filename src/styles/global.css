@@ -235,6 +235,19 @@ a.card {
   margin: 0 0 0.5rem;
 }
 
+.card-source {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  /* color: var(--accent); */
+  /* text-decoration: none; */
+  margin: 0 0 0.2rem;
+}
+
+.card-source:hover {
+  text-decoration: underline;
+}
+
 .card-tags {
   display: flex;
   flex-wrap: wrap;

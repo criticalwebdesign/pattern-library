@@ -3,7 +3,7 @@ title: The Guardian "Puzzles Hub"
 category: game
 images:
   - src: ./img-01.png
-    alt: Wordiply
+    title: Wordiply
     tags:
       - tutorial
       - instructions

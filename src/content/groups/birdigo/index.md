@@ -3,7 +3,7 @@ title: Birdigo
 category: game
 images:
   - src: ./img-01.png
-    alt: Title screen
+    title: Title screen
     tags:
       - menu
       - title-screen
@@ -12,39 +12,39 @@ images:
       - daily-challenge
       - locked
   - src: ./img-03.png
-    alt: Onboarding
+    title: Onboarding
     tags:
       - onboarding
       - words
       - map
   - src: ./img-06.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - words
       - map
   - src: ./img-07.png
-    alt: Continue a previous path
+    title: Continue a previous path
     tags:
       - guidance
   - src: ./img-09.png
-    alt: Overworld
+    title: Overworld
     tags:
       - overworld
   - src: ./img-12.png
-    alt: Spelling
+    title: Spelling
     tags:
       - words
       - letters
       - award
   - src: ./img-21.png
-    alt: Spelling
+    title: Spelling
     tags:
       - words
       - letters
       - award
   - src: ./img-27.png
-    alt: Try again
+    title: Try again
     tags:
       - stats
       - end-screen

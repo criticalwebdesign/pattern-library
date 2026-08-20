@@ -3,16 +3,16 @@ title: Rage Minute
 category: web
 images:
   - src: ./img-01.png
-    alt: Timer
+    title: Timer
     tags:
       - timer
   - src: ./img-02.png
-    alt: ' Leaderboard'
+    title: ' Leaderboard'
     tags:
       - leaderboard
       - location
   - src: ./img-03.png
-    alt: Share
+    title: Share
     tags:
       - share
       - pop-up

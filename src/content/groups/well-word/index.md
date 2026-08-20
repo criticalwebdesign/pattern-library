@@ -3,32 +3,32 @@ title: Well Word
 category: web
 images:
   - src: ./img-01.png
-    alt: Onboarding
+    title: Onboarding
     tags:
       - onboarding
       - words
   - src: ./img-02.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - words
   - src: ./img-04.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - words
   - src: ./img-07.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - words
   - src: ./img-11.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - words
   - src: ./img-16.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - goal-setting

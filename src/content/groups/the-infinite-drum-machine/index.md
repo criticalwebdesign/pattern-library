@@ -3,7 +3,7 @@ title: The Infinite Drum Machine
 category: web
 images:
   - src: ./img-01.png
-    alt: Interface
+    title: Interface
     tags:
       - sound
       - map

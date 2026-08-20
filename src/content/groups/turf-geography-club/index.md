@@ -3,45 +3,45 @@ title: Turf Geography Club
 category: game
 images:
   - src: ./img-01.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
       - pixel-art
       - location
   - src: ./img-03.png
-    alt: Onboarding
+    title: Onboarding
     tags:
       - onboarding
       - pixel-art
       - input
   - src: ./img-06.png
-    alt: Onboarding
+    title: Onboarding
     tags:
       - onboarding
       - pixel-art
       - input
   - src: ./img-15.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - pixel-art
       - goal-setting
       - location
   - src: ./img-21.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - pixel-art
       - goal-setting
       - location
   - src: ./img-28.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - pixel-art
       - goal-setting
   - src: ./img-36.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - pixel-art
@@ -49,30 +49,30 @@ images:
       - social
       - friends
   - src: ./img-55.png
-    alt: In-game location
+    title: In-game location
     tags:
       - construction
       - pixel-art
       - location
   - src: ./img-66.png
-    alt: In-game location
+    title: In-game location
     tags:
       - construction
       - pixel-art
       - location
   - src: ./img-91.png
-    alt: Collection page
+    title: Collection page
     tags:
       - pixel-art
       - collection
       - location
   - src: ./img-105.png
-    alt: In-game location
+    title: In-game location
     tags:
       - pixel-art
       - location
   - src: ./img-136.png
-    alt: In-game location
+    title: In-game location
     tags:
       - pixel-art
       - location

@@ -3,49 +3,58 @@ title: Pokémon Go
 category: game
 images:
   - src: ./img-01.png
-    alt: Camera permissions
+    title: Camera permissions
     tags:
       - permissions
   - src: ./img-04.png
-    alt: Pokémon Go pokédex
+    title: Pokémon Go pokédex
     tags:
       - mobile
       - collection
       - monsters
       - location
   - src: ./img-05.png
-    alt: Pokémon Go capture sequence
+    title: Pokémon Go capture sequence
     tags:
       - monsters
       - award
       - collection
       - location
+      - gps
   - src: ./img-06.png
-    alt: Zubat
+    title: Zubat
     tags:
       - monsters
       - location
       - xp
+      - gyroscope
+      - gps
   - src: ./img-10.png
-    alt: Ledyba
+    title: Ledyba
     tags:
       - monsters
       - location
       - xp
+      - gyroscope
+      - gps
   - src: ./img-15.png
-    alt: Natu
+    title: Natu
     tags:
       - monsters
       - location
       - xp
+      - gyroscope
+      - gps
   - src: ./img-03.png
-    alt: Bulbasaur
+    title: Bulbasaur
     tags:
       - monsters
       - location
       - xp
+      - gyroscope
+      - gps
   - src: ./img-16.jpg
-    alt: Fire Duck
+    title: Fire Duck
     tags:
       - monsters
       - xp

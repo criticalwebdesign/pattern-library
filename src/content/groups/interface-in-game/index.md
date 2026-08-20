@@ -3,7 +3,7 @@ title: Interface In Game
 category: web
 images:
   - src: ./img-01.png
-    alt: Pattern website
+    title: Pattern website
     tags:
       - design
       - design-patterns

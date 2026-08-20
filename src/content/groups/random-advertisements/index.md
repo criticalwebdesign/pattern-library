@@ -3,7 +3,7 @@ title: Random Advertisements
 category: game
 images:
   - src: ./img-01.png
-    alt: Sorting game
+    title: Sorting game
     tags:
       - sorting
       - hands
@@ -11,7 +11,7 @@ images:
       - marketing
       - mobile
   - src: ./img-02.png
-    alt: Drag
+    title: Drag
     tags:
       - drag-and-drop
       - hands
@@ -19,7 +19,7 @@ images:
       - marketing
       - mobile
   - src: ./img-03.png
-    alt: Time Hero game
+    title: Time Hero game
     tags:
       - rhythm-game
       - sound
@@ -27,7 +27,7 @@ images:
       - marketing
       - mobile
   - src: ./img-04.png
-    alt: Search for "art games"
+    title: Search for "art games"
     tags:
       - marketing
       - in-app-purchase
@@ -35,7 +35,7 @@ images:
       - app-store
       - mobile
   - src: ./img-06.png
-    alt: Search for "art games"
+    title: Search for "art games"
     tags:
       - in-app-purchase
       - marketing
@@ -43,7 +43,7 @@ images:
       - app-store
       - mobile
   - src: ./img-07.png
-    alt: ATM Simulation
+    title: ATM Simulation
     tags:
       - simulation
       - currency
@@ -51,20 +51,20 @@ images:
       - in-app-purchase
       - mobile
   - src: ./img-08.png
-    alt: Colorfy
+    title: Colorfy
     tags:
       - color
       - mobile
       - ads
   - src: ./img-09.png
-    alt: Hungry Babies
+    title: Hungry Babies
     tags:
       - title-screen
       - animals
       - mobile
       - ads
   - src: ./img-10.png
-    alt: Headspace ad
+    title: Headspace ad
     tags:
       - ads
       - app
@@ -73,21 +73,21 @@ images:
       - animals
       - meditation
   - src: ./img-11.png
-    alt: Paper.io ad
+    title: Paper.io ad
     tags:
       - ads
   - src: ./img-13.png
-    alt: Ad for language game
+    title: Ad for language game
     tags:
       - ads
       - language
   - src: ./img-16.png
-    alt: Ad for language game
+    title: Ad for language game
     tags:
       - ads
       - language
   - src: ./img-20.png
-    alt: Ad for language game
+    title: Ad for language game
     tags:
       - ads
       - language

@@ -3,38 +3,41 @@ title: Game is Hard
 category: game
 images:
   - src: ./img-01.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
       - main-menu
   - src: ./img-07.png
-    alt: Daily challenge
+    title: Daily challenge
     tags:
       - puzzles
       - challenge
       - daily-challenge
       - currency
   - src: ./img-47.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - puzzles
       - tutorial
+      - gyroscope
+      - device
   - src: ./img-48.png
-    alt: Puzzle
+    title: Puzzle
     tags:
       - puzzles
       - dropdown
       - tutorial
       - main-menu
       - menu
+      - words
   - src: ./img-49.png
-    alt: Hint tutorial
+    title: Hint tutorial
     tags:
       - tutorial
       - puzzles
       - hint
   - src: ./img-50.png
-    alt: In app purchase
+    title: In app purchase
     tags:
       - in-app-purchase
       - hint

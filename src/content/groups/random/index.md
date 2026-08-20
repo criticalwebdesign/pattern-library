@@ -3,41 +3,41 @@ title: Random
 category: app
 images:
   - src: ./img-01.png
-    alt: weather.com tutorial
+    title: weather.com tutorial
     tags:
       - tutorial
       - overlay
   - src: ./img-02.png
-    alt: Crossword puzzle game achievements
+    title: Crossword puzzle game achievements
     tags:
       - achievements
       - progress
       - social
   - src: ./img-04.png
-    alt: Crossword puzzle game achievements
+    title: Crossword puzzle game achievements
     tags:
       - progress
       - social
   - src: ./img-05.jpg
-    alt: Pet Vet game
+    title: Pet Vet game
     tags:
       - collection
       - award
       - animals
   - src: ./img-06.png
-    alt: Yutani award
+    title: Yutani award
     tags:
       - award
       - currency
       - locked
   - src: ./img-08.png
-    alt: Daily challenge
+    title: Daily challenge
     tags:
       - daily-challenge
       - dates
       - award
   - src: ./img-09.png
-    alt: Kaiju Rush
+    title: Kaiju Rush
     tags:
       - monsters
       - levels
@@ -46,7 +46,7 @@ images:
       - progress
       - banner-ads
   - src: ./img-10.png
-    alt: 'Super Monkey Ball: Sakura Edition tutorial'
+    title: 'Super Monkey Ball: Sakura Edition tutorial'
     tags:
       - tutorial
       - timer

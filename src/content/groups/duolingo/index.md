@@ -5,7 +5,7 @@ url: 'https://www.duolingo.com'
 description: 'Streak mechanics, skill-tree navigation, and reward moments.'
 images:
   - src: ./img-01.png
-    alt: Leaderboard
+    title: Leaderboard
     tags:
       - leaderboard
       - xp
@@ -15,7 +15,7 @@ images:
       - language
       - avatar
   - src: ./img-02.png
-    alt: Progression
+    title: Progression
     tags:
       - reward
       - overworld
@@ -23,7 +23,7 @@ images:
       - progress
       - language
   - src: ./img-04.png
-    alt: Progression
+    title: Progression
     tags:
       - reward
       - overworld
@@ -31,35 +31,35 @@ images:
       - progress
       - language
   - src: ./img-05.png
-    alt: Streak repair offer
+    title: Streak repair offer
     tags:
       - streak
       - offer
   - src: ./img-07.png
-    alt: Social code
+    title: Social code
     tags:
       - social
       - friends
       - characters
   - src: ./img-08.png
-    alt: Translation game
+    title: Translation game
     tags:
       - options
       - sound
       - characters
     caption: sound
   - src: ./img-09.png
-    alt: Translation game
+    title: Translation game
     tags:
       - options
       - radio-buttons
   - src: ./img-11.png
-    alt: Translation game
+    title: Translation game
     tags:
       - options
       - characters
   - src: ./img-13.png
-    alt: Translation game
+    title: Translation game
     tags:
       - options
       - sound

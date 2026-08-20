@@ -3,7 +3,7 @@ title: Everyday Grids
 category: game
 images:
   - src: ./img-01.png
-    alt: Main menu and puzzle
+    title: Main menu and puzzle
     tags:
       - puzzles
       - main-menu

@@ -3,7 +3,7 @@ title: Dumb Ways to Die
 category: game
 images:
   - src: ./img-01.png
-    alt: Overworld
+    title: Overworld
     tags:
       - overworld
       - customization
@@ -12,7 +12,7 @@ images:
       - timer
       - currency
   - src: ./img-03.png
-    alt: New character
+    title: New character
     tags:
       - characters
       - achievements
@@ -20,14 +20,14 @@ images:
       - timer
       - currency
   - src: ./img-06.png
-    alt: Customization
+    title: Customization
     tags:
       - customization
       - progress
       - locked
       - currency
   - src: ./img-15.png
-    alt: Popup
+    title: Popup
     tags:
       - modal
       - menu
@@ -36,36 +36,36 @@ images:
       - currency
       - store
   - src: ./img-21.png
-    alt: Menu
+    title: Menu
     tags:
       - menu
       - microgame
   - src: ./img-28.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - modal
       - microgame
       - tutorial
   - src: ./img-36.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - microgame
   - src: ./img-45.png
-    alt: Achievements
+    title: Achievements
     tags:
       - tutorial
       - achievements
       - microgame
       - end-screen
   - src: ./img-55.png
-    alt: Effect
+    title: Effect
     tags:
       - effect
       - intertitle
       - microgame
   - src: ./img-66.png
-    alt: Achievements
+    title: Achievements
     tags:
       - achievements
       - microgame

@@ -3,12 +3,12 @@ title: Pokémon
 category: game
 images:
   - src: ./img-01.png
-    alt: Pokémon Trading Card Game (TCG) Pocket Achievements
+    title: Pokémon Trading Card Game (TCG) Pocket Achievements
     tags:
       - achievements
       - level-up
   - src: ./img-03.png
-    alt: Pokémon Trading Card Game (TCG) Pocket Emblems
+    title: Pokémon Trading Card Game (TCG) Pocket Emblems
     tags:
       - badges
       - achievements
@@ -16,13 +16,13 @@ images:
       - characters
       - monsters
   - src: ./img-06.png
-    alt: Pokémon capture sequence
+    title: Pokémon capture sequence
     tags:
       - monsters
       - collection
       - award
   - src: ./img-07.png
-    alt: Pokémon capture sequence
+    title: Pokémon capture sequence
     tags:
       - monsters
       - collection

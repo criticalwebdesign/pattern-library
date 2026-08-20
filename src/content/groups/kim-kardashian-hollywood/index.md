@@ -3,16 +3,16 @@ title: 'Kim Kardashian: Hollywood'
 category: game
 images:
   - src: ./img-01.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
   - src: ./img-03.png
-    alt: Personalization
+    title: Personalization
     tags:
       - characters
       - customization
   - src: ./img-06.png
-    alt: Tutorial
+    title: Tutorial
     tags:
       - tutorial
       - labor

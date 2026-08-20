@@ -3,25 +3,25 @@ title: Plug and Play
 category: game
 images:
   - src: ./img-01.gif
-    alt: Character animation
+    title: Character animation
     tags:
       - characters
       - animation
       - line-art
   - src: ./img-02.png
-    alt: Narrative
+    title: Narrative
     tags:
       - narrative
       - line-art
       - characters
   - src: ./img-04.png
-    alt: Narrative
+    title: Narrative
     tags:
       - narrative
       - line-art
       - characters
   - src: ./img-07.png
-    alt: Menu
+    title: Menu
     tags:
       - progress
       - line-art

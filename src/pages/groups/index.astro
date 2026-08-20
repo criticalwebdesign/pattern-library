@@ -17,7 +17,7 @@ const groups = await getGroupSummaries();
           <a class="card" href={`${import.meta.env.BASE_URL}groups/${group.slug}/`}>
             <Image
               src={group.coverImage}
-              alt={group.coverAlt}
+              alt={group.coverTitle}
               width={520}
               height={Math.round((520 * group.coverImage.height) / group.coverImage.width)}
               loading="lazy"

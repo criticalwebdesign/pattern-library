@@ -3,47 +3,47 @@ title: Literally
 category: game
 images:
   - src: ./img-93.png
-    alt: Onboarding tutorial
+    title: Onboarding tutorial
     tags:
       - tutorial
       - onboarding
       - words
   - src: ./img-95.png
-    alt: Onboarding tutorial
+    title: Onboarding tutorial
     tags:
       - tutorial
       - onboarding
       - words
   - src: ./img-01.png
-    alt: Challenge page
+    title: Challenge page
     tags:
       - challenge
       - words
   - src: ./img-46.png
-    alt: Instructions
+    title: Instructions
     tags:
       - instructions
       - words
   - src: ./img-56.png
-    alt: Modal
+    title: Modal
     tags:
       - stats
       - words
       - notification
   - src: ./img-67.png
-    alt: Stats
+    title: Stats
     tags:
       - stats
       - words
   - src: ./img-79.png
-    alt: Modal
+    title: Modal
     tags:
       - modal
       - hint
       - words
       - notification
   - src: ./img-92.png
-    alt: Modal
+    title: Modal
     tags:
       - modal
       - stats

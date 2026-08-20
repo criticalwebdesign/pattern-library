@@ -13,7 +13,7 @@ Each website/app/game is a folder under `src/content/groups/<slug>/` containing 
 npm run admin
 ```
 
-Opens a local-only tool at `localhost:4877` for creating groups and adding images: drag & drop files onto a group (they're saved to disk and renamed automatically — `img-01.png`, `img-02.png`, … — so you never have to think about filenames), then fill in alt text and tags per image with tag autocomplete drawn from every tag already used on the site. Everything autosaves straight back to that group's `index.md`. It's a dev-only tool (a separate Express server in `tools/admin/`, not part of the deployed Astro site) that edits the same files described below, so it's just a faster way to do option B.
+Opens a local-only tool at `localhost:4877` for creating groups and adding images: drag & drop files onto a group (they're saved to disk and renamed automatically — `img-01.png`, `img-02.png`, … — so you never have to think about filenames), then fill in a title and tags per image with tag autocomplete drawn from every tag already used on the site. Everything autosaves straight back to that group's `index.md`. It's a dev-only tool (a separate Express server in `tools/admin/`, not part of the deployed Astro site) that edits the same files described below, so it's just a faster way to do option B.
 
 ### Option B: edit the files by hand
 
@@ -29,11 +29,11 @@ Opens a local-only tool at `localhost:4877` for creating groups and adding image
    description: Optional one-line description of the app.
    images:
      - src: ./screenshot-1.png
-       alt: Accessible description of what's shown
+       title: Accessible description of what's shown
        tags: [onboarding, dark-mode]
        caption: Optional short caption shown under the thumbnail
      - src: ./screenshot-2.png
-       alt: Another screenshot
+       title: Another screenshot
        tags: [settings, light-mode]
    ---
    ```

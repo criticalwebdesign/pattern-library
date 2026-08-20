@@ -3,28 +3,28 @@ title: Burley Men at Sea
 category: game
 images:
   - src: ./img-01.png
-    alt: Intertitle
+    title: Intertitle
     tags:
       - intertitle
   - src: ./img-03.png
-    alt: Interactive narrative
+    title: Interactive narrative
     tags:
       - narrative
       - characters
       - point-and-click
   - src: ./img-10.png
-    alt: Interactive narrative
+    title: Interactive narrative
     tags:
       - narrative
       - characters
       - point-and-click
   - src: ./img-15.png
-    alt: Title screen
+    title: Title screen
     tags:
       - title-screen
       - language
   - src: ./img-21.png
-    alt: Language menu
+    title: Language menu
     tags:
       - language
       - menu

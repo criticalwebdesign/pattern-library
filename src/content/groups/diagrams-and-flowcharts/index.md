@@ -3,35 +3,35 @@ title: Diagrams and flowcharts
 category: web
 images:
   - src: ./img-02.jpg
-    alt: Evolution of game controllers infographic
+    title: Evolution of game controllers infographic
     tags:
       - material
       - game
       - device
   - src: ./img-03.jpg
-    alt: Dungeons & Dragons flowchart
+    title: Dungeons & Dragons flowchart
     tags:
       - game
       - flowchart
   - src: ./img-04.jpg
-    alt: Electrical discharge diagrams
+    title: Electrical discharge diagrams
     tags:
       - diagram
   - src: ./img-05.jpg
-    alt: ' How to play any game with a young kid'
+    title: ' How to play any game with a young kid'
     tags:
       - flowchart
   - src: ./img-06.png
-    alt: Should I post this?
+    title: Should I post this?
     tags:
       - flowchart
       - infographic
   - src: ./img-07.jpg
-    alt: The Illusion of Choice infographic
+    title: The Illusion of Choice infographic
     tags:
       - infographic
   - src: ./img-12.png
-    alt: Return of the Jedi infographic
+    title: Return of the Jedi infographic
     tags:
       - infographic
       - flowchart
@@ -39,7 +39,7 @@ images:
       - cinema
       - characters
   - src: ./img-16.jpg
-    alt: Super Mario Brothers
+    title: Super Mario Brothers
     tags:
       - input
       - controller
@@ -48,19 +48,19 @@ images:
       - flowchart
       - characters
   - src: ./img-21.jpg
-    alt: What puzzle game am I?
+    title: What puzzle game am I?
     tags:
       - flowchart
       - 8-bit
       - puzzles
       - characters
   - src: ./img-27.jpg
-    alt: Strong female character flowchart
+    title: Strong female character flowchart
     tags:
       - flowchart
       - characters
   - src: ./img-28.gif
-    alt: Wiimote
+    title: Wiimote
     tags:
       - physics
       - material

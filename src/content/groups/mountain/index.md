@@ -3,12 +3,12 @@ title: Mountain
 category: game
 images:
   - src: ./img-01.png
-    alt: Mountain
+    title: Mountain
     tags:
       - simulation
       - meditation
   - src: ./img-03.png
-    alt: Options
+    title: Options
     tags:
       - settings
       - simulation
@@ -16,7 +16,7 @@ images:
       - social
       - meditation
   - src: ./img-06.png
-    alt: Mountain
+    title: Mountain
     tags:
       - simulation
       - meditation
