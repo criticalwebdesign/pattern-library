@@ -91,7 +91,6 @@ images:
       - achievements
       - goal-setting
       - dark-mode
-    caption: s
   - src: ./img-41.png
     title: Streak
     tags:

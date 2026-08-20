@@ -231,7 +231,8 @@ a.card {
 }
 
 .card-caption {
-  font-size: 0.92rem;
+  font-size: 0.8rem;
+  color: var(--muted);
   margin: 0 0 0.5rem;
 }
 
@@ -239,8 +240,6 @@ a.card {
   display: inline-block;
   font-size: 0.8rem;
   color: var(--muted);
-  /* color: var(--accent); */
-  /* text-decoration: none; */
   margin: 0 0 0.2rem;
 }
 
@@ -251,6 +250,7 @@ a.card {
 .card-tags {
   display: flex;
   flex-wrap: wrap;
+  margin: 0.5rem 0 0 0;
   gap: 0.3rem;
 }
 

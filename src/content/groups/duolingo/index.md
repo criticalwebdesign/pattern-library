@@ -47,7 +47,6 @@ images:
       - options
       - sound
       - characters
-    caption: sound
   - src: ./img-09.png
     title: Translation game
     tags:
@@ -64,7 +63,6 @@ images:
       - options
       - sound
       - characters
-    caption: sound
 platform: mobile
 ---
 
