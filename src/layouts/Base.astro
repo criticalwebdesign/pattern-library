@@ -1,12 +1,15 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'A browsable library of UI design and interface patterns from websites, apps, and games.' } = Astro.props;
+const {
+  title,
+  description = "A browsable library of UI design and interface patterns from websites, apps, and games.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,11 +19,31 @@ const { title, description = 'A browsable library of UI design and interface pat
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title} · Pattern Library</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={`${import.meta.env.BASE_URL}apple-touch-icon.png`}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href={`${import.meta.env.BASE_URL}favicon-32x32.png`}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href={`${import.meta.env.BASE_URL}favicon-16x16.png`}
+    />
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`} />
   </head>
   <body>
     <header class="site-header">
       <div class="container">
-        <a class="site-title" href={import.meta.env.BASE_URL}>Pattern Library</a>
+        <a class="site-title" href={import.meta.env.BASE_URL}>Pattern Library</a
+        >
         <nav class="site-nav">
           <a href={import.meta.env.BASE_URL}>Browse</a>
           <a href={`${import.meta.env.BASE_URL}groups/`}>Groups</a>
